@@ -14,3 +14,8 @@ const requests ={
 module.exports = requests;
 
 // модудь з сапросами у ключём API_KEY
+
+//языки
+//https://api.themoviedb.org/3/configuration/languages?api_key=b8147d9a2b320232dcbd7689528ce05a
+//поиск
+//https://api.themoviedb.org/3/search/movie?api_key=b8147d9a2b320232dcbd7689528ce05a&query=oblivion

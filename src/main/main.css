@@ -88,40 +88,27 @@ body, h1 {
     justify-content: space-between;
     align-items: center;
     gap: 1vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
 
-  .left_arrow{
-    position : sticky;
-    left: 0;
-    top: 10vh;
-    width: 2vw;
-    height: 20vh;
-  }
+.arrow {
+  width: 2vw;
+  height: 20vh;
+}
 
-  .right_arrow{
-    position : sticky;
-    right: 0;
-    top: 10vh;
-    width: 2vw;
-    height: 20vh;
-  }
 
-  .slider{
-    width: 100%;
-    height: 100%;
-  }
-
-.item_slider{
+.item_slider {
   display: flex;
-  gap: 1vw;
+  gap: 10px;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-.image_item_slider{
-  width: 15vw;
-  height: 40vh;
+.image_item_slider {
+  width: 250px;
+  height: 400px;
 }
 

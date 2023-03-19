@@ -4,6 +4,12 @@ body {
   
 }
 
+a:-webkit-any-link {
+  text-decoration: none;
+  color: rgb(253, 2, 2);
+}
+
+
 input , button, select {
   background-color: rgba(0, 0, 0, 0.7);
   color: white;

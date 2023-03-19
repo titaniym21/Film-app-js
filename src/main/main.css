@@ -1,7 +1,6 @@
-body {
+body, h1 {
     margin: 0;
     padding: 0;
-    
   }
   
   input , button, select {
@@ -29,7 +28,8 @@ body {
   }
 
   .container {
-    background-image: url(../img/NL-en-20230306-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+    background-image: url("https://image.tmdb.org/t/p/w500/6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg");
+    /* url(../img/NL-en-20230306-popsignuptwoweeks-perspective_alpha_website_large.jpg); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -39,6 +39,8 @@ body {
   
   
   .header {
+    top: 0;
+    position: sticky;
     width: 100%;
     height: 100px;
     display: flex;
@@ -51,3 +53,76 @@ body {
     font-size: 2rem;
     color: red;
   }
+
+  .preview_item{
+    width: 100%;
+    height: 45vh;
+  }
+
+  .preview_item_title{
+    position: relative;
+    left: 10vw;
+    top: 30vh;
+  }
+
+  .preview_item_control{
+    position: relative;
+    left: 10vw;
+    top: 30vh;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+  }
+
+  .slider_box{
+    width: 100%;
+    height: 40vh;
+  }
+
+  .arrow_slider{
+    margin-top: 2vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vw;
+  }
+
+
+  .left_arrow{
+    position : sticky;
+    left: 0;
+    top: 10vh;
+    width: 2vw;
+    height: 20vh;
+  }
+
+  .right_arrow{
+    position : sticky;
+    right: 0;
+    top: 10vh;
+    width: 2vw;
+    height: 20vh;
+  }
+
+  .slider{
+    width: 100%;
+    height: 100%;
+  }
+
+.item_slider{
+  display: flex;
+  gap: 1vw;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image_item_slider{
+  width: 15vw;
+  height: 40vh;
+}
+

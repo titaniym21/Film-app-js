@@ -1,5 +1,6 @@
 const getHtmlData = require('../js/dataToHtml');
 const initSlaider = require('../js/slider');
+const animationDropList = require('../js/dropDownList');
 
 const fs = require('fs');
 const path = require('path');
@@ -48,6 +49,10 @@ const leftArrowTopRated = document.querySelector('.left_arrow_top_rated');
 const rightArrowTopRated = document.querySelector('.right_arrow_top_rated');
 
 initSlaider(leftArrowTopRated, rightArrowTopRated, itemSliderHtmlTopRated);
+
+// слушатель на header -> осуществляет выпадающий список из title в header
+const header = document.querySelector('.header');
+header.addEventListener('click', animationDropList);
 
 
 

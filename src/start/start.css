@@ -1,78 +1,259 @@
+html,
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #000000;
+  color: #ffffff;
+  background-image: url(./img/ground.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
 
+  overflow-x: hidden;
 }
 
-a:-webkit-any-link, a {
-    color: rgb(253, 2, 2);
-    cursor: pointer;
-    text-decoration: none;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000000;
 }
-
-
-input, button, select {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-button {
-    width: 150px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    background-color: rgb(253, 2, 2);
-}
-
-input::placeholder {
-    color: white;
-}
-
 .container {
-    background-image: url(../img/NL-en-20230306-popsignuptwoweeks-perspective_alpha_website_large.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh;
+  background-image: url(./img/ground.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
 }
 
-
-.header {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+.logo img {
+  margin-left: 10px;
+  height: 80px;
 }
 
-.logo {
-    font-size: 2rem;
-    color: red;
+.login form {
+  display: flex;
+  align-items: center;
 }
 
-
-.main {
-    position: relative;
-    top: 40%;
-    width: 100%;
-    display: grid;;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
+.login label {
+  margin-right: 10px;
 }
 
-.main-text {
-    color: white;
-    font-size: 2rem;
-    font-weight: 900;
-    text-align: center;
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="submit"] {
+  font-size: 16px;
+  width: 150px;
+  padding: 5px;
+  border: none;
+  background-color: #ffffff;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.login input[type="submit"] {
+  background-color: #e50914;
+  cursor: pointer;
+}
+
+main {
+  padding: 100px 50px;
+  background-color: #00000077;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+/* .pThanks {
+    font-size: 53px;
+    margin-bottom: 30px;
+    color: #ffffff;
+  } */
+
+form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input[type="email"] {
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #d80000;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.58);
+  display: block;
+  animation: zoom 0.3s linear forwards;
+  opacity: 1;
+}
+.modalClose {
+  animation: zoom 0.3s linear reverse forwards;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+}
+.ready{
+    display: block;
+    opacity: 1;   
+}
+.hidden{
+    display: none;
+    opacity: 0;
+}
+.modal-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #000000e1;
+  margin: 15% auto;
+  padding: 70px;
+  width: 70%;
+  height: 25%;
+  max-width: 800px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: #ababab;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+/* .modal-content::backdrop {
+  animation: zoom 0.2s linear reverse forwards;
+  transition: 1s ease-in-out;
+} */
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+label[for="remember-me"] {
+  font-size: 14px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+input[type="submit"]:hover {
+  background-color: #b2070f;
+}
+button {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+#startBtn {
+  animation: zoom 0.3s linear forwards;
+}
+@keyframes zoom {
+  0% {
+    transform: scale(0.2);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta charset="UTF-8">
+	<title>Hetflix</title>
+	<link rel="stylesheet" href="start.css">
     <script defer src="./start.js"></script>
-    <link href="./start.css" rel="stylesheet">
-    <title>Film-app/start</title>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <div class="logo">
+	<header>
+		<div class="logo">
             <a href="../start/start.html">
-                <h1>Film-app</h1>
-            </a>
-        </div>
-        <!-- <div class="search">
-          <input type="text" placeholder="Search...">
-        </div> -->
-        <select class="lang">
-            <option value="en">English</option>
-        </select>
-        <button class="sign">sign in</button>
-    </div>
-    <div class="main">
-        <div class="main-text">
-            <h2>Watch your favorite movies</h2>
-            <p>Watch your favorite movies and series online for free</p>
-        </div>
-        <div class="start">
-            <input placeholder="Enter email adress" type="text">
-            <a href="../main/main.html">
-                <button class="btn" id="startBtn">Get Started</button>
-            </a>
-        </div>
-    </div>
-</div>
+			<img id="logo" src="./img/logo.png" alt="Netflix Logo">
+		</div>
+    </a>
+		<div class="login">
+			<form id="login-form" action="" method="post">
+				<input type="submit" value="Log In">
+			</form>
+		</div>
+	</header>
+	<main>
+		<h1>Join Hetflix Today</h1>
+	<p class="ready">Ready to watch? Enter your email to create or restart your membership.</p>
+		<form id="signup-form" action="" method="post">
+			<label for="email"></label>
+			<input type="email" id="email" name="email" required>
+			<input type="submit" value="Sing In">
+        <!-- <button class="btn" id="startBtn">
+            <a href="../main/main.html"></a>Get Started
+        </button> -->
+
+
+        <button id="startBtn" class="btn"><a href="../main/main.html">Get Started</a></button>
+		</form>
+	</main>
 </body>
 </html>

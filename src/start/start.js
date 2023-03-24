@@ -1,3 +1,9 @@
+
+const checkLogFile = require('../js/loadInfo');
+const requests = require('../js/requests');
+
+
+
 const loginForm = document.getElementById("login-form");
 loginForm.addEventListener("submit", function(event) {
 	event.preventDefault();
@@ -136,3 +142,6 @@ setTimeout(() => {
   ready.style.display = "none";
 });
 
+getStarted.addEventListener('click', () => {
+	checkLogFile(requests);
+});

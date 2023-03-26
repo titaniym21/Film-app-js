@@ -4,26 +4,89 @@ const animationDropList = require('../js/dropDownList');
 const fs = require('fs');
 const path = require('path');
 
+let masElemetLisener = [];
+
+
+async function addGanresSlider() {
+    try {
+        const files = await fs.promises.readdir(path.join(__dirname, '../data'));
+
+        for (const file of files) {
+            if (file !== 'log.json') {
+                const movies = JSON.parse(await fs.promises.readFile((path.join(__dirname, `../data/${file}`)), 'utf8')).results;
+                const fileWithoutExt = file.split('.')[0];
+
+                const htmlItemGanres = `<div class="arrow_slider">
+                    <button id="left_arrow_${fileWithoutExt}" class="arrow"><</button>
+                    <div id="${fileWithoutExt}_item" class="item_slider"></div>
+                    <button id="right_arrow_${fileWithoutExt}" class="arrow">></button>
+                </div>`;
+
+                const sliderBox = document.querySelector('.slider_box');
+                sliderBox.innerHTML += htmlItemGanres;
+
+                const htmlData = await getHtmlData(movies);
+
+                let item = document.getElementById(`${fileWithoutExt}_item`);
+                item.innerHTML = htmlData;
+
+                let leftArrow = document.getElementById(`left_arrow_${fileWithoutExt}`);
+                let rightArrow = document.getElementById(`right_arrow_${fileWithoutExt}`);
+
+                masElemetLisener.push({leftArrow, rightArrow, item}); ;
+            }
+        }
+    } catch (err) {
+        console.error(err);
+    }
+}
+addGanresSlider().then(() => {
+    try {
+        masElemetLisener.forEach((element) => {
+            console.log(element);
+            initSlaider(element.leftArrow, element.rightArrow, element.item);
+        });
+    } catch (err) {
+        console.error(err);
+    }
+    
+});
 
 
 
-//fetchTrending.json , указали путь к файлу , распарсили и получили массив результатов
-let popularMovies = JSON.parse(fs.readFileSync((path.join(__dirname, '../data/popularMovies.json')), 'utf8')).results;
-// визвали функцию для получения html вставки для слайдера, получили строку
-let htmlDataTrends = getHtmlData(popularMovies);
-// выбрали элемент в который будем вставлять html 
-const itemTrends = document.querySelector('.trending_item');
 
-// вставили html
-itemTrends.innerHTML = htmlDataTrends;
+const header = document.querySelector('.header');
+header.addEventListener('click', animationDropList);
+ 
+const { getTrailer, getGenres, getProductionCompanies } = require('../js/search/getData');
+const { delFromMyList, delModalWindow, delBoxSearch } = require('../js/search/functionDel');
+const createSearchList = require('../js/search/createSearchList');
+const arrWindow = require('../js/search/createModalWindow');
+const body = document.body;
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const { API_KEY } = require('../js/requests');
 
+function globalSearch() {
+    let input = searchInput.value;
+    let search = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${input}`;
+    fetch(search)
+        .then((data) => data.json())
+        .then((obj) => obj.results) 
+        .then((obj) => createSearchList(obj))
+        .catch((error) => console.log(error))
+}
 
-const leftArrowTrending = document.querySelector('.left_arrow_trending');
-const rightArrowTrending = document.querySelector('.right_arrow_trending');
+function enter(event) {
+    if (event.key === 'Enter') {
+        if (searchInput.value.length > 0) {
+            globalSearch();
+        }
+    }
+}
 
-initSlaider(leftArrowTrending, rightArrowTrending, itemTrends);
-
-
+body.addEventListener('keydown', enter);
+searchButton.addEventListener('click', globalSearch);
 
 
 

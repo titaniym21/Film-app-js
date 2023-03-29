@@ -1,59 +1,21 @@
-const getHtmlData = require('../js/dataToHtml');
-const initSlaider = require('../js/slider');
 const animationDropList = require('../js/dropDownList');
-const fs = require('fs');
-const path = require('path');
+const addFilmToMain = require('../js/addFilmToMain');
+const getRandomFilm = require('../js/mainBackgroundImage');
 
-let masElemetLisener = [];
+addFilmToMain('netflixOriginals', '.netflixOriginals_item', '.left_arrow_netflixOriginals', '.right_arrow_netflixOriginals');
+addFilmToMain('netflixPopular', '.netflixPopular_item', '.left_arrow_netflixPopular', '.right_arrow_netflixPopular');
+addFilmToMain('netflixTopRated', '.netflixTopRated_item', '.left_arrow_netflixTopRated', '.right_arrow_netflixTopRated');
+addFilmToMain('topRatedMovies', '.topRatedMovies_item', '.left_arrow_topRatedMovies', '.right_arrow_topRatedMovies');
+addFilmToMain('popularMovies', '.popularMovies_item', '.left_arrow_popularMovies', '.right_arrow_popularMovies');
+addFilmToMain('scienceFictionMovies', '.scienceFictionMovies_item', '.left_arrow_scienceFictionMovies', '.right_arrow_scienceFictionMovies');
 
+// картинка главного єкрана + название
 
-async function addGanresSlider() {
-    try {
-        const files = await fs.promises.readdir(path.join(__dirname, '../data'));
+const previewItemTitle = document.querySelector('.preview_item_title');
+const main = document.querySelector('.main');
+getRandomFilm('netflixOriginals', main, previewItemTitle);
 
-        for (const file of files) {
-            if (file !== 'log.json') {
-                const movies = JSON.parse(await fs.promises.readFile((path.join(__dirname, `../data/${file}`)), 'utf8')).results;
-                const fileWithoutExt = file.split('.')[0];
-
-                const htmlItemGanres = `<div class="arrow_slider">
-                    <button id="left_arrow_${fileWithoutExt}" class="arrow"><</button>
-                    <div id="${fileWithoutExt}_item" class="item_slider"></div>
-                    <button id="right_arrow_${fileWithoutExt}" class="arrow">></button>
-                </div>`;
-
-                const sliderBox = document.querySelector('.slider_box');
-                sliderBox.innerHTML += htmlItemGanres;
-
-                const htmlData = await getHtmlData(movies);
-
-                let item = document.getElementById(`${fileWithoutExt}_item`);
-                item.innerHTML = htmlData;
-
-                let leftArrow = document.getElementById(`left_arrow_${fileWithoutExt}`);
-                let rightArrow = document.getElementById(`right_arrow_${fileWithoutExt}`);
-
-                masElemetLisener.push({leftArrow, rightArrow, item}); ;
-            }
-        }
-    } catch (err) {
-        console.error(err);
-    }
-}
-addGanresSlider().then(() => {
-    try {
-        masElemetLisener.forEach((element) => {
-            console.log(element);
-            initSlaider(element.leftArrow, element.rightArrow, element.item);
-        });
-    } catch (err) {
-        console.error(err);
-    }
-    
-});
-
-
-
+//--------------------------------------------поиск------------------------------------------------------------
 
 const header = document.querySelector('.header');
 header.addEventListener('click', animationDropList);

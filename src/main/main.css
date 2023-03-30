@@ -1,14 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   background-color: rgb(32, 32, 32);
 }
 
 body,
-h1{
+h1 {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
@@ -50,7 +50,7 @@ input::placeholder {
   color: rgb(218, 218, 218);
 }
 
-.container{
+.container {
   width: 100%;
 }
 
@@ -58,17 +58,17 @@ input::placeholder {
   width: 100%;
 }
 
-
 .header {
   position: fixed;
-  top:0;
-  width:100%;
-  padding:30px;
+  top: 0;
+  width: 100%;
+  padding: 30px;
   height: 30px;
   z-index: 1;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   background-color: rgb(32, 32, 32);
+  font-size: 18px;
 }
 
 #title_menu {
@@ -87,7 +87,7 @@ input::placeholder {
 
 #title_menu div,
 a {
-  padding: 7px;
+  padding: 13px;
   border: transparent 2px solid;
   border-radius: 25px;
 }
@@ -169,22 +169,22 @@ a {
 
 .list_Home {
   position: absolute;
-  left: 200px;
+  left: 230px;
 }
 
 .list_Film {
   position: absolute;
-  left: 320px;
+  left: 350px;
 }
 
 .list_Popular {
   position: absolute;
-  left: 470px;
+  left: 500px;
 }
 
 .list_My {
   position: absolute;
-  left: 615px;
+  left: 650px;
 }
 
 .user_menu {
@@ -196,7 +196,7 @@ a {
   gap: 10px;
 }
 
-.main{
+.main {
   margin-top: 60px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -230,7 +230,6 @@ a {
   height: 50vh;
 }
 
-
 .arrow_slider {
   position: relative;
   left: -100px;
@@ -249,10 +248,11 @@ a {
   height: 40px;
   left: 30px;
   display: inline-block;
-  width:auto;
+  width: auto;
 }
 
-.left_arrow, .right_arrow {
+.left_arrow,
+.right_arrow {
   width: 50px;
   height: 400px;
   margin: 10px;
@@ -272,21 +272,19 @@ a {
   z-index: 1;
 }
 
-.left_arrow:hover, .right_arrow:hover {
+.left_arrow:hover,
+.right_arrow:hover {
   opacity: 1;
   transition: 0.3s;
 }
-
-
 
 .item_slider {
   display: flex;
   gap: 40px;
   width: 100%;
-  overflow : hidden;
+  overflow: hidden;
   padding-left: 40px;
 }
-
 
 .image_item_slider {
   width: 250px;
@@ -294,15 +292,13 @@ a {
   transition: 0.5s;
 }
 
-.item_wrapper{
+.item_wrapper {
   width: 100%;
   height: 400px;
 }
 
-
 .image_item_slider:hover {
   scale: 1.1;
-  
 }
 
 #searchButton {

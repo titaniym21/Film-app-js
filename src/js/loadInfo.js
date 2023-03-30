@@ -20,8 +20,10 @@ async function fetchMovies(obj) {
           console.log(err);
         }
     }
-
+    
 }
+
+
 
 
 module.exports = fetchMovies;

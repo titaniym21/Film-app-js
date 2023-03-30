@@ -263,6 +263,7 @@ a {
 .right_arrow {
   position: sticky;
   right: 100px;
+  
 }
 
 .left_arrow {
@@ -274,7 +275,7 @@ a {
 
 .left_arrow:hover,
 .right_arrow:hover {
-  opacity: 1;
+  opacity: 0.5;
   transition: 0.3s;
 }
 

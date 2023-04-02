@@ -1,5 +1,7 @@
 'use strict';
+
 let windowMod;
+
 class CreateModalWindow {
     constructor(obj) {
         this.name = obj.original_title;

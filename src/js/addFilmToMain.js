@@ -1,5 +1,6 @@
 const initSlider = require('../js/slider');
 const getHtmlData = require('../js/dataToHtml');
+const addImageLisener = require('../js/addImageLisener');
 
 async function addFilmToMain(genreName, elementSelector, leftArrowSelector, rightArrowSelector) {
     let movies = JSON.parse(localStorage.getItem(genreName));
@@ -8,6 +9,7 @@ async function addFilmToMain(genreName, elementSelector, leftArrowSelector, righ
     const rightArrow = document.querySelector(rightArrowSelector);
     const data = await getHtmlData(movies.results);
     element.innerHTML = data;
+    await addImageLisener(element);
     initSlider(leftArrow, rightArrow, element);
 }
 

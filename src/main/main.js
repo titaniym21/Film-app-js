@@ -1,6 +1,14 @@
 const animationDropList = require('../js/dropDownList');
 const addFilmToMain = require('../js/addFilmToMain');
 const getRandomFilm = require('../js/mainBackgroundImage');
+const test = require('../js/loadInfo').test;
+const requests = require('../js/requests').requests;
+
+
+//  const obj = requests(3);
+//  const key = 'netflixPopular';
+//  test(obj, key);
+
 
 addFilmToMain('netflixOriginals', '.netflixOriginals_item', '.left_arrow_netflixOriginals', '.right_arrow_netflixOriginals');
 addFilmToMain('netflixPopular', '.netflixPopular_item', '.left_arrow_netflixPopular', '.right_arrow_netflixPopular');
@@ -14,6 +22,7 @@ addFilmToMain('scienceFictionMovies', '.scienceFictionMovies_item', '.left_arrow
 const previewItemTitle = document.querySelector('.preview_item_title');
 const main = document.querySelector('.main');
 getRandomFilm('netflixOriginals', main, previewItemTitle);
+
 
 //--------------------------------------------поиск------------------------------------------------------------
 

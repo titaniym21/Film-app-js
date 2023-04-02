@@ -1,3 +1,8 @@
+const fetchMovies = require('../js/loadInfo');
+const requests = require('../js/requests').requests;
+fetchMovies(requests());
+
+
 const loginForm = document.getElementById("login-form");
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();

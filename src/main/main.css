@@ -233,7 +233,7 @@ a {
 .arrow_slider {
   position: relative;
   left: -100px;
-  width: 110%;
+  width: 111%;
   display: flex;
   justify-content: space-between;
   align-items: center;

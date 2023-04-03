@@ -1,4 +1,4 @@
-const bigPosterImg = require('../js/requests').bigPosterImg;
+const bigPosterImg = require('./requests').bigPosterImg;
 
 function getRandomFilm(ganresName, backgroundPoster, titlePoster) {
     let mas = JSON.parse(localStorage.getItem(ganresName));

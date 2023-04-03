@@ -21,17 +21,8 @@ async function getHtmlData(masData) {
   return htmlData;
 }
 
-
 module.exports = getHtmlData;
 
 
 
-/* <button class="item_button item_button_play">
-<img src="../img/play-button.png" alt="" class="item_button_img">
-</button>
-<button class="item_button item_button_info">
-<img src="../img/info-button.png" alt="" class="item_button_img">
-</button>
-<button class="item_button item_button_add">
-<img src="../img/add.png" alt="" class="item_button_img">
-</button> */
+

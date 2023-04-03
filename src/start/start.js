@@ -1,6 +1,6 @@
-const fetchMovies = require('../js/loadInfo').fetchMovies;
-const requests = require('../js/requests').requests;
-fetchMovies(requests(1));
+const fetchMovies = require('../js/mainJs/loadInfo').fetchMovies;
+const requests = require('../js/mainJs/requests').requests;
+fetchMovies(requests());
 
 
 const loginForm = document.getElementById("login-form");

@@ -25,43 +25,4 @@ async function fetchMovies(obj) {
 }
 
 
-//функция принимает объект с localStorage и ключ . после чего добавляет к result данные из новой страницы
-
-
-async function test (obj, key) {
-  const result = JSON.parse(localStorage.getItem(key));
-  console.log(result);
-  const response = await fetch(obj[key]);
-  // console.log(response);
-  const data = await response.json();
-  const newData = {...data};
-  console.log(newData);
-
-
-  //result.push(...newData);
-  //console.log(result);
-  //fetch(obj[key])
-    //.then((data) => data.json())
-    //.then((obj) => obj.results)
-    //.then((obj) => result.results.push(...obj))
-    //console.log(data);
-
-  // console.log(result);
-}
-
-
-
-
-// async function fetchMovi(obj, key){
-//   try{
-
-
-//   }
-//   catch(err){
-//     console.log(err);
-//   }
-
-// }
-
-
-module.exports = {fetchMovies, test};
+module.exports = {fetchMovies};

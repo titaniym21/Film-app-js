@@ -49,7 +49,7 @@ class ButtonAdd {
 class Title {
     constructor(obj) {
         this.title = document.createElement('h2');
-        this.title.textContent = `${obj.original_title}`;
+        this.title.textContent = `${obj.title}`;
         return this.title;
     }
 }
@@ -81,7 +81,7 @@ class Genres {
 class ProductionCompanies {
     constructor(obj) {
         this.productionCompanies = document.createElement('div');
-        this.productionCompanies = getProductionCompanies(obj.production_companies);
+        this.productionCompanies.textContent = getProductionCompanies(obj.production_companies);
         return this.productionCompanies;
     }
 }

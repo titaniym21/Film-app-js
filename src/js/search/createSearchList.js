@@ -26,6 +26,15 @@ function createSearchList(obj) {
     buttonClose.addEventListener('click', delBoxSearch);
     bg.append(buttonClose);
     body.append(bg);
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    if (bg.children.length === 1) {
+        bg.remove();
+        searchInput.value = '';
+        searchInput.placeholder = 'Result not found...';
+    }
 }
 
 module.exports = createSearchList;

@@ -34,6 +34,10 @@ function openFirstPage(obj) {
     let boxButton = new BoxButton();
     bg.append(buttonClose, boxButton);
     body.append(bg);
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 module.exports = {

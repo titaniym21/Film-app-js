@@ -36,17 +36,11 @@ header {
   background-color: #000000cf;
 }
 section {
-  margin: auto;
-  position: absolute;
-  left: 25%;
-  top: 28%;
-  width: 100%;
-  height: 100vh;
   animation: zoom 0.3s linear forwards;
   transition: 0.5 ease-in-out;
   visibility: visible;
   z-index: 100;
-  visibility: visible;
+  background-color: #00000077;
 }
 .blur {
   backdrop-filter: blur(5px);
@@ -88,15 +82,7 @@ section {
   background-color: #e50914;
   cursor: pointer;
 }
-main {
-  padding: 100px 50px;
-  background-color: #00000077;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 65vh;
-}
+
 #signup-form {
   display: flex;
   flex-direction: column;
@@ -110,18 +96,24 @@ input[type="email"],
   margin-bottom: 1rem;
 }
 h1 {
-  font-size: 3rem;
+  font-size: 3.7rem;
   margin-bottom: 1rem;
+  position: relative;
+  bottom: 21%;
 }
 h2 {
-  font-size: 24px;
+  font-size: 3.0rem;
   font-weight: bold;
-  margin-top: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 1rem;
+  color: var(--gray);
 }
-p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: #ffffff;
+.ready {
+  font-size: 1.4rem;
+  margin-bottom: 0.1rem;
+  position: relative;
+  bottom: 22%;
 }
 label {
   display: block;
@@ -174,11 +166,7 @@ a {
   text-decoration: none;
   color: #fff;
 }
-.ready {
-  display: flex;
-  text-align: center;
-  font-size: 1.2rem;
-}
+
 #user-info {
   padding-bottom: 10px;
   margin-bottom: auto;
@@ -186,6 +174,8 @@ a {
 #startBtn {
   display: none;
   animation: zoom 0.3s linear forwards;
+  position: absolute;
+  top: 32%;
 }
 @keyframes zoom {
   0% {
@@ -203,7 +193,6 @@ a {
 .form-tittle {
   font-weight: 300;
   margin: 0;
-  margin-bottom: 1.25rem;
 }
 .link {
   color: var(--gray);
@@ -213,12 +202,9 @@ a {
 }
 .container {
   border-radius: 10px;
-  /* box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.88); */
   height: var(--max-height);
   max-width: var(--max-width);
   overflow: hidden;
-  position: relative;
-  width: 100%;
 }
 .container-form {
   height: 100%;
@@ -313,7 +299,7 @@ a {
   transition: transform 80ms ease-in;
 }
 .form > .btn {
-  margin-top: 1.5rem;
+  margin-top: 0.1rem;
 }
 .btn:active {
   transform: scale(0.95);
@@ -377,7 +363,7 @@ a {
 .dropdown:hover .dropdown-content{
   display: block;
   position: absolute;
-  right: 70px;
+  right: 5px;
 }
 a:hover{
   color: var(--lightRed);
@@ -395,9 +381,29 @@ a:hover{
   padding: 5px;
   margin-right: 6px;
 }
-span{
+.container-input {
   position: relative;
-  bottom: 5px;
-  font-size: 20px;
-  font-weight: 700; 
+  bottom: 12%;
+  display: block;
+  text-align: center;
+  width: 350px;
+}
+
+.status {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  font-size: 14px;
+  color: red;
+  text-align: left;
+  width: 100%;
+}
+
+main {
+  background-color: #00000077;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
 }

@@ -1,25 +1,42 @@
 "use strict";
+// const singInBtn = require('./startJs/modal.js');
+// const singUpBtn = require('./startJs/modal.js');
+// const container = require('./startJs/modal.js');
+// const firstForm = require('./startJs/modal.js');
 
+// const emailInput = require('./startJs/mailCheck.js');
+// const emailStatus = require('./startJs/mailCheck.js');
+// const containerInput = require('./startJs/mailCheck.js');
+
+
+
+// MAIL CHECK
+const emailInput = document.getElementById("inputLogMain");
+const emailStatus = document.getElementById("email-status");
+const containerInput = document.getElementById("containerInput");
+// -------------------------0-------------------------
 // MODAL
-const singInBtn = document.getElementById('singIn');
-const singUpBtn = document.getElementById('singUp');
-const firstForm = document.getElementById('form1');
-const secondForm = document.getElementById('form2');
-const container = document.querySelector('.container');
+const singInBtn = document.getElementById("singIn");
+const singUpBtn = document.getElementById("singUp");
+const firstForm = document.getElementById("form1");
+const secondForm = document.getElementById("form2");
+const container = document.querySelector(".container");
 
-singInBtn.addEventListener('click', () => {
-    container.classList.remove('right-panel-active');
+singInBtn.addEventListener("click", () => {
+  container.classList.remove("right-panel-active");
 });
-singUpBtn.addEventListener('click', () => {
-    container.classList.add('right-panel-active');
+singUpBtn.addEventListener("click", () => {
+  container.classList.add("right-panel-active");
 });
-firstForm.addEventListener('submit', (e) => e.preventDefault());
-secondForm.addEventListener('submit', (e) => e.preventDefault());
+firstForm.addEventListener("submit", (e) => e.preventDefault());
+secondForm.addEventListener("submit", (e) => e.preventDefault());
 
 // START
 const loginForm = document.getElementById("login-form");
 const myModal = document.getElementById("myModal");
 const modalMain = document.querySelector("main");
+const startBtn = document.getElementById("startBtn");
+startBtn.classList.toggle("hidden");
 const body = document.body;
 
 loginForm.addEventListener("submit", function (event) {
@@ -51,10 +68,11 @@ function registerUser() {
   let password = document.querySelector('input[type="password"]').value;
 
   if (localStorage.getItem(email)) {
-    console.log("User already exists. Please choose a different email address.");
+    console.log(
+      "User already exists. Please choose a different email address."
+    );
     return;
   }
-
   let user = {
     username: username,
     email: email,
@@ -66,9 +84,8 @@ function registerUser() {
   document.querySelector('input[type="email"]').value = "";
   document.querySelector('input[type="password"]').value = "";
   console.log("Registration successful.");
-  container.classList.remove('right-panel-active');
+  container.classList.remove("right-panel-active");
 }
-
 function loginUser() {
   let email = document.getElementById("inputLog");
   let password = document.getElementById("inputPass");
@@ -77,28 +94,27 @@ function loginUser() {
   if (userData.email === email.value && userData.password === password.value) {
     console.log("Login successful. Welcome " + userData.username + "!");
     startUserIcon();
-    window.onload = function() {
-      loginUser();
-    }
+    location.reload();
+    localStorage.setItem("userLoggedIn", true);
+    localStorage.setItem("loggedInUsername", userData.username);
+
     if (userData) {
       myModal.style.display = "none";
-      const startBtn = document.getElementById("startBtn");
-      startBtn.style.display = "block";
+      startBtn.classList.toggle("hidden");
+      containerInput.classList.toggle("hidden");
       let ready = document.querySelector(".ready");
       ready.textContent = "";
     }
-  } else {
-    console.log("Incorrect email or password. Please try again.");
   }
   document.querySelector('input[type="email"]').value = "";
   document.querySelector('input[type="password"]').value = "";
 }
 
 function startUserIcon() {
-  let email = document.getElementById("inputLog");
-  let userData = JSON.parse(localStorage.getItem(email.value), "userData");
+  let isLoggedIn = localStorage.getItem("userLoggedIn");
+  let loggedInUsername = localStorage.getItem("loggedInUsername");
 
-  if (userData) {
+  if (isLoggedIn && loggedInUsername) {
     const userIcon = document.createElement("img");
     userIcon.src = "./img/user-icon.png";
     userIcon.alt = "User Icon";
@@ -107,7 +123,7 @@ function startUserIcon() {
     userIcon.classList.add("userIcon");
 
     const usernameIcon = document.createElement("span");
-    usernameIcon.textContent = userData.username;
+    usernameIcon.textContent = loggedInUsername;
     const dropdown = document.createElement("div");
     dropdown.classList.add("dropdown");
     dropdown.appendChild(usernameIcon);
@@ -130,6 +146,8 @@ function startUserIcon() {
     dropdown.appendChild(dropdownContent);
     logoutLink.addEventListener("click", function (event) {
       event.preventDefault();
+      localStorage.removeItem("userLoggedIn");
+      localStorage.removeItem("loggedInUsername");
       location.reload();
     });
 
@@ -139,33 +157,52 @@ function startUserIcon() {
   }
 }
 
-// ПЕРЕВІРКА ПОШТИ
-const emailInput = document.getElementById('inputLogMain');
-const emailStatus = document.getElementById('email-status');
+// SUCURITY
+document.addEventListener("DOMContentLoaded", function () {
+    let isLoggedIn = localStorage.getItem("userLoggedIn");
+    let loggedInUsername = localStorage.getItem("loggedInUsername");
+    startUserIcon();
+    if (isLoggedIn && loggedInUsername) {
+      console.log("Welcome back, " + loggedInUsername + "!");
+      loginForm.classList.toggle("hidden");
+      
+      myModal.style.display = "none";
+      startBtn.classList.toggle("hidden");
+      containerInput.classList.toggle("hidden");
+      let ready = document.querySelector(".ready");
+      ready.textContent = "";
+    }
+  });
 
-emailInput.addEventListener('input', function() {
+// MAIL CHECK
+emailInput.addEventListener("input", function () {
   const email = emailInput.value;
   const user = JSON.parse(localStorage.getItem(email));
   if (user) {
-    emailStatus.classList.remove('invalid');
-    emailStatus.classList.add('valid');
-    emailStatus.textContent = 'Email found!';
+    emailStatus.classList.remove("invalid");
+    emailStatus.classList.add("valid");
+    emailStatus.textContent = "Email found!";
     console.log("Email exists in localStorage.");
     setTimeout(() => {
       location.href = "../main/main.html";
     }, 500);
-    
   } else {
-    emailStatus.classList.remove('valid');
-    emailStatus.classList.add('invalid');
-    emailStatus.textContent = 'Email not found.';
+    emailStatus.classList.remove("valid");
+    emailStatus.classList.add("invalid");
+    emailStatus.textContent = "Email not found.";
     console.log("Email does not exist in localStorage.");
   }
 });
-
 
 // export default username;
 // export default userData;
 // import { startUserIcon } from "./startUser.js";
 
 
+
+
+
+
+
+// window.onload = function () {
+// };

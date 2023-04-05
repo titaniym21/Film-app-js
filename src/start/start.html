@@ -5,8 +5,7 @@
 	<title>Hetflix</title>
 	<link rel="stylesheet" href="start.css">
     <script defer src="./start.js"></script>
-    <script defer src="./modal.js"></script>
-    <script defer src="./startUser.js"></script>
+    <!-- <script defer src="./startUser.js"></script>  -->
 </head>
 <body>
 	<header>
@@ -59,11 +58,11 @@
 	<main>  
 		<h1>Join Hetflix Today</h1>
 	<p class="ready">Ready to watch? Enter your email to create or restart your membership.</p>
-<div class="container-input">
+<div class="container-input" id="containerInput">
   <input type="email" placeholder="email" class="inputMain" id="inputLogMain">
 <span id="email-status" class="status"></span>
 </div>
-    <button id="startBtn" class="btn"><a href="../main/main.html">Get Started</a></button>
+    <a href="../main/main.html"><button id="startBtn" type="button" class="btn">Get Started</button></a>
 	</main>
 </body>
 </html>

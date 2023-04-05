@@ -162,6 +162,14 @@ button {
   font-size: 16px;
   font-weight: bold;
 }
+button:hover {
+  background-color: var(--red);
+  transform: scale(0.95);
+}
+button:active {
+  color: var(--gray);
+  transform: scale(0.5);
+}
 a {
   text-decoration: none;
   color: #fff;
@@ -172,10 +180,9 @@ a {
   margin-bottom: auto;
 }
 #startBtn {
-  display: none;
-  animation: zoom 0.3s linear forwards;
-  position: absolute;
-  top: 32%;
+  animation: zoom 0.4s linear;
+  position: relative;
+  top: -345%;
 }
 @keyframes zoom {
   0% {
@@ -296,10 +303,12 @@ a {
   font-weight: 0.1rem;
   padding: 0.9rem 4rem;
   text-transform: uppercase;
-  transition: transform 80ms ease-in;
 }
-.form > .btn {
+/* .form > .btn {
   margin-top: 0.1rem;
+} */
+.btn:hover {
+  color: var(--gray);
 }
 .btn:active {
   transform: scale(0.95);
@@ -339,7 +348,7 @@ a {
 }
 /* ___________
  */
-.user {
+ .user {
   position: absolute;
   top: 25px;
   right: 50px;
@@ -348,8 +357,10 @@ a {
 }
 .dropdown {
   position: relative;
+  bottom: 5px;
   padding: 5px;
   display: inline-block;
+  font-size: 1.5rem;
 }
 
 .dropdown-content {
@@ -357,8 +368,9 @@ a {
   position: absolute;
   z-index: 1;
   padding-bottom: 5px;
-  margin: 4px;
+  margin: 5px;
   font-size: 18px;
+  min-width: 100px;
 }
 .dropdown:hover .dropdown-content{
   display: block;

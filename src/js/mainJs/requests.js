@@ -5,6 +5,7 @@ const API_KEY = "b8147d9a2b320232dcbd7689528ce05a";
 
 function requests(page = 1) {
     let ganres = {
+
         netflixOriginals: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`,
         netflixPopular: `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=${page}`,
         netflixTopRated: `https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`,

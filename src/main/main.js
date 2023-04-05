@@ -3,6 +3,8 @@ const addFilmToMain = require('../js/mainJs/addFilmToMain');
 const getRandomFilm = require('../js/mainJs/mainBackgroundImage');
 const requests = require('../js/mainJs/requests').requests;
 //const addHtmlToSliderBox = require('../js/mainJs/addHtmlToSliderBox');
+const fetchMovies = require('../js/mainJs/loadInfo').fetchMovies;
+fetchMovies(requests());
 
 
 

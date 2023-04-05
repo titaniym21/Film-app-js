@@ -16,12 +16,12 @@
             <img id="logo" src="../img/logo.png" alt="" />
           </a>
           <div>
-            <a href="../main/main.html"><h2>Main</h2></a>
+            <a href="../main/main.html">Main</a>
           </div>
-          <div id="tvseries"><h2>TV series</h2></div>
-          <div id="film"><h2>Movies</h2></div>
-          <div id="popular"><h2>New and popular</h2></div>
-          <div id="my"><h2>My list</h2></div>
+          <div id="tvseries" class="genres">TV series</div>
+          <div id="film" class="genres">Movies</div>
+          <div id="popular" class="genres">New and popular</div>
+          <div id="my" class="genres">My list</div>
         </div>
         <div class="user_menu">
           <div class="search">
@@ -29,26 +29,28 @@
           </div>
           <img id="searchButton" src="../img/search.png" alt="" />
         </div>
-        <ul class="list_Hetflix list_Home" id="listHome">
-          <li class="in_Hetflix">Телесеріали</li>
-          <li class="in_Hetflix">Телесеріали</li>
-          <li class="in_Hetflix">Телесеріали</li>
-          <li class="in_Hetflix">Телесеріали</li>
-          <li class="in_Hetflix">Телесеріали</li>
-        </ul>
+
         <ul class="list_Hetflix list_Film" id="listFilm">
-          <li class="in_Hetflix">Фільми</li>
-          <li class="in_Hetflix">Фільми</li>
-          <li class="in_Hetflix">Фільми</li>
-          <li class="in_Hetflix">Фільми</li>
-          <li class="in_Hetflix">Фільми</li>
+          <li class="in_Hetflix">Action</li>
+          <li class="in_Hetflix">Animation</li>
+          <li class="in_Hetflix">Documentary</li>
+          <li class="in_Hetflix">Music</li>
+          <li class="in_Hetflix">Mystery</li>
+          <li class="in_Hetflix">History</li>
+          <li class="in_Hetflix">Thriller</li>
+          <li class="in_Hetflix">War</li>
+          <li class="in_Hetflix">Western</li>
         </ul>
         <ul class="list_Hetflix list_Popular" id="listPopular">
-          <li class="in_Hetflix">Новинки</li>
-          <li class="in_Hetflix">Новинки</li>
-          <li class="in_Hetflix">Новинки</li>
-          <li class="in_Hetflix">Новинки</li>
-          <li class="in_Hetflix">Новинки</li>
+          <li class="in_Hetflix">Adventure</li>
+          <li class="in_Hetflix">Comedy</li>
+          <li class="in_Hetflix">Crime</li>
+          <li class="in_Hetflix">Drama</li>
+          <li class="in_Hetflix">Family</li>
+          <li class="in_Hetflix">Fantasy</li>
+          <li class="in_Hetflix">Horror</li>
+          <li class="in_Hetflix">Romance</li>
+          <li class="in_Hetflix">Science Fiction</li>
         </ul>
         <ul class="list_Hetflix list_My" id="listMy"></ul>
       </div>
@@ -65,47 +67,64 @@
         <div class="slider_box">
           <div class="arrow_slider_title"><h2>Netflix Originals</h2></div>
           <div class="arrow_slider">
-            <button class="left_arrow_netflixOriginals left_arrow">&#10148;</button>
+            <button class="left_arrow_netflixOriginals left_arrow">
+              &#10148;
+            </button>
             <div class="netflixOriginals_item item_slider"></div>
-            <button class="right_arrow_netflixOriginals right_arrow">&#10148;</button>
-        </div>
-        </div>
-        </div>
-        </div>
-        <div class="container">
-          <div class="slider_box">
-            <div class="arrow_slider_title"><h2>Netflix Popular</h2></div>
-            <div class="arrow_slider">
-              <button class="left_arrow_netflixPopular left_arrow">&#10148;</button>
-              <div class="netflixPopular_item item_slider"></div>
-              <button class="right_arrow_netflixPopular right_arrow">&#10148;</button>
-          </div>
-          <div class="arrow_slider_title"><h2>Netflix TopRated</h2></div>
-          <div class="arrow_slider">
-              <button class="left_arrow_netflixTopRated left_arrow">&#10148;</button>
-              <div class="netflixTopRated_item item_slider"></div>
-              <button class="right_arrow_netflixTopRated right_arrow">&#10148;</button>
-          </div>
-          <div class="arrow_slider_title"><h2>Top Rated Movies</h2></div>
-          <div class="arrow_slider">
-              <button class="left_arrow_topRatedMovies left_arrow">&#10148;</button>
-              <div class="topRatedMovies_item item_slider"></div>
-              <button class="right_arrow_topRatedMovies right_arrow">&#10148;</button>
-          </div>
-          <div class="arrow_slider_title"><h2>Popular Movies</h2></div>
-          <div class="arrow_slider">
-              <button class="left_arrow_popularMovies left_arrow">&#10148;</button>
-              <div class="popularMovies_item item_slider"></div>
-              <button class="right_arrow_popularMovies right_arrow">&#10148;</button>
-          </div>
-          <div class="arrow_slider_title"><h2>Science Fiction Movies</h2></div>
-          <div class="arrow_slider">
-              <button class="left_arrow_scienceFictionMovies left_arrow">&#10148;</button>
-              <div class="scienceFictionMovies_item item_slider"></div>
-              <button class="right_arrow_scienceFictionMovies right_arrow">&#10148;</button>
-          </div>
+            <button class="right_arrow_netflixOriginals right_arrow">
+              &#10148;
+            </button>
           </div>
         </div>
       </div>
+    </div>
+    <div class="container">
+      <div class="slider_box">
+        <div class="arrow_slider_title"><h2>Netflix Popular</h2></div>
+        <div class="arrow_slider">
+          <button class="left_arrow_netflixPopular left_arrow">&#10148;</button>
+          <div class="netflixPopular_item item_slider"></div>
+          <button class="right_arrow_netflixPopular right_arrow">
+            &#10148;
+          </button>
+        </div>
+        <div class="arrow_slider_title"><h2>Netflix TopRated</h2></div>
+        <div class="arrow_slider">
+          <button class="left_arrow_netflixTopRated left_arrow">
+            &#10148;
+          </button>
+          <div class="netflixTopRated_item item_slider"></div>
+          <button class="right_arrow_netflixTopRated right_arrow">
+            &#10148;
+          </button>
+        </div>
+        <div class="arrow_slider_title"><h2>Top Rated Movies</h2></div>
+        <div class="arrow_slider">
+          <button class="left_arrow_topRatedMovies left_arrow">&#10148;</button>
+          <div class="topRatedMovies_item item_slider"></div>
+          <button class="right_arrow_topRatedMovies right_arrow">
+            &#10148;
+          </button>
+        </div>
+        <div class="arrow_slider_title"><h2>Popular Movies</h2></div>
+        <div class="arrow_slider">
+          <button class="left_arrow_popularMovies left_arrow">&#10148;</button>
+          <div class="popularMovies_item item_slider"></div>
+          <button class="right_arrow_popularMovies right_arrow">
+            &#10148;
+          </button>
+        </div>
+        <div class="arrow_slider_title"><h2>Science Fiction Movies</h2></div>
+        <div class="arrow_slider">
+          <button class="left_arrow_scienceFictionMovies left_arrow">
+            &#10148;
+          </button>
+          <div class="scienceFictionMovies_item item_slider"></div>
+          <button class="right_arrow_scienceFictionMovies right_arrow">
+            &#10148;
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

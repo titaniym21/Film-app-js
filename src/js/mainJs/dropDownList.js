@@ -1,9 +1,11 @@
 'use strict';
 
-const listHome = document.getElementById('listHome');
+const genreListener = require('../genres/genreListener');
+
 const listFilm = document.getElementById('listFilm');
 const listPopular = document.getElementById('listPopular');
 const listMy = document.getElementById('listMy');
+const tvSeries = document.getElementById('tvseries');
 
 function openCloseList(list) {
     if (list.classList.contains("animHetflix")) {
@@ -15,9 +17,6 @@ function openCloseList(list) {
 
 function animationDropList(event) {
     switch (event.target.id) {
-        case 'tvseries':
-            openCloseList(listHome);
-            break;
         case 'film':
             openCloseList(listFilm);
             break;
@@ -29,5 +28,15 @@ function animationDropList(event) {
             break;
     }
 }
+
+function bodyListener() {
+    document.body.addEventListener('click', genreListener)
+}
+
+listPopular.addEventListener('click', bodyListener)
+listFilm.addEventListener('click', bodyListener)
+tvSeries.addEventListener('click', bodyListener)
+
+module.exports = animationDropList;
 
 module.exports = animationDropList;

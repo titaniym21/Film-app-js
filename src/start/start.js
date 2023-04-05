@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use strict";
 
 // MODAL
@@ -17,6 +18,13 @@ firstForm.addEventListener('submit', (e) => e.preventDefault());
 secondForm.addEventListener('submit', (e) => e.preventDefault());
 
 // START
+=======
+const fetchMovies = require('../js/mainJs/loadInfo').fetchMovies;
+const requests = require('../js/mainJs/requests').requests;
+fetchMovies(requests());
+
+
+>>>>>>> e57c0bbdeb8490638693d7e1ca935447dee4e9ba
 const loginForm = document.getElementById("login-form");
 const myModal = document.getElementById("myModal");
 const modalMain = document.querySelector("main");

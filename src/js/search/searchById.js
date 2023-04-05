@@ -8,11 +8,11 @@ function searchById(id) {
     fetch(search)
         .then((data) => data.json())
         .then((obj) => {
-            let bg = document.createElement('section');
-            bg.classList.add('bg');
-            body.append(bg);
-            windowModal = new CreateModalWindow(obj)
-            body.append(windowModal);
+                let bg = document.createElement('section');
+                bg.classList.add('bg');
+                body.append(bg);
+                windowModal = new CreateModalWindow(obj)
+                body.append(windowModal);
         })
         .catch((error) => console.log(error))
 }

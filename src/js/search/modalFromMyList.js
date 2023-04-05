@@ -1,5 +1,7 @@
 'use strict';
+
 let windowMod;
+
 class CreateModalWindow {
     constructor(obj) {
         this.name = obj.original_title;
@@ -47,6 +49,7 @@ function searchById(id) {
 }
 
 function modalFromMyList(event) {
+    event.target.parentNode.classList.toggle("closeAnimHetflix");
     let listItem = event.target.textContent;
     let search = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${listItem}`;
     fetch(search)

@@ -16,7 +16,7 @@ function createSearchList(obj) {
             posterInBox.src = `https://image.tmdb.org/t/p/w500${obj[i].poster_path}`;
             let title = document.createElement('h2');
             title.classList.add('title-in-box');
-            title.textContent = `${obj[i].original_title}`;
+            title.textContent = `${obj[i].title}`;
             boxSearch.append(posterInBox, title);
             bg.append(boxSearch);
         }
@@ -26,6 +26,17 @@ function createSearchList(obj) {
     buttonClose.addEventListener('click', delBoxSearch);
     bg.append(buttonClose);
     body.append(bg);
+    body.children[1].style.display = 'none';
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    if (bg.children.length === 1) {
+        bg.remove();
+        searchInput.value = '';
+        searchInput.placeholder = 'Result not found...';
+        body.children[1].style.display = 'block';
+    }
 }
 
 module.exports = createSearchList;

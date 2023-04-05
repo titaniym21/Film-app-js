@@ -1,33 +1,37 @@
-const animationDropList = require('../js/dropDownList');
-const addFilmToMain = require('../js/addFilmToMain');
-const getRandomFilm = require('../js/mainBackgroundImage');
+const animationDropList = require('../js/mainJs/dropDownList');
+const addFilmToMain = require('../js/mainJs/addFilmToMain');
+const getRandomFilm = require('../js/mainJs/mainBackgroundImage');
+const requests = require('../js/mainJs/requests').requests;
+//const addHtmlToSliderBox = require('../js/mainJs/addHtmlToSliderBox');
 
-addFilmToMain('netflixOriginals', '.netflixOriginals_item', '.left_arrow_netflixOriginals', '.right_arrow_netflixOriginals');
-addFilmToMain('netflixPopular', '.netflixPopular_item', '.left_arrow_netflixPopular', '.right_arrow_netflixPopular');
-addFilmToMain('netflixTopRated', '.netflixTopRated_item', '.left_arrow_netflixTopRated', '.right_arrow_netflixTopRated');
-addFilmToMain('topRatedMovies', '.topRatedMovies_item', '.left_arrow_topRatedMovies', '.right_arrow_topRatedMovies');
-addFilmToMain('popularMovies', '.popularMovies_item', '.left_arrow_popularMovies', '.right_arrow_popularMovies');
-addFilmToMain('scienceFictionMovies', '.scienceFictionMovies_item', '.left_arrow_scienceFictionMovies', '.right_arrow_scienceFictionMovies');
 
-// картинка главного єкрана + название
 
-const previewItemTitle = document.querySelector('.preview_item_title');
-const main = document.querySelector('.main');
-getRandomFilm('netflixOriginals', main, previewItemTitle);
+async function startMain(obj) {
+    const previewItemTitle = document.querySelector('.preview_item_title');
+    const main = document.querySelector('.main');
+    getRandomFilm('netflixOriginals', main, previewItemTitle);
+    for (let key in obj) {
+        let tmp = key;
+        await addFilmToMain(tmp, `.${tmp}_item`, `.left_arrow_${tmp}`, `.right_arrow_${tmp}`);
+    }
+}
+
+startMain(requests());
+
 
 //--------------------------------------------поиск------------------------------------------------------------
 
 const header = document.querySelector('.header');
 header.addEventListener('click', animationDropList);
- 
-const { getTrailer, getGenres, getProductionCompanies } = require('../js/search/getData');
-const { delFromMyList, delModalWindow, delBoxSearch } = require('../js/search/functionDel');
+
+const {getTrailer, getGenres, getProductionCompanies} = require('../js/search/getData');
+const {delFromMyList, delModalWindow, delBoxSearch} = require('../js/search/functionDel');
 const createSearchList = require('../js/search/createSearchList');
 const arrWindow = require('../js/search/createModalWindow');
 const body = document.body;
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
-const { API_KEY } = require('../js/requests');
+const {API_KEY} = require('../js/mainJs/requests');
 
 function globalSearch() {
     let input = searchInput.value;

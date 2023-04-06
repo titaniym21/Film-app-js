@@ -304,9 +304,6 @@ a {
   padding: 0.9rem 4rem;
   text-transform: uppercase;
 }
-/* .form > .btn {
-  margin-top: 0.1rem;
-} */
 .btn:hover {
   color: var(--gray);
 }
@@ -350,9 +347,8 @@ a {
  */
  .user {
   position: absolute;
-  top: 25px;
+  top: 32px;
   right: 50px;
-  padding: 5px;
   z-index: 200;
 }
 .dropdown {

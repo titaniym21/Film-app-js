@@ -1,20 +1,29 @@
 "use strict";
-// const singInBtn = require('./startJs/modal.js');
-// const singUpBtn = require('./startJs/modal.js');
 // const container = require('./startJs/modal.js');
-// const firstForm = require('./startJs/modal.js');
-
-// const emailInput = require('./startJs/mailCheck.js');
-// const emailStatus = require('./startJs/mailCheck.js');
-// const containerInput = require('./startJs/mailCheck.js');
-
-
 
 // MAIL CHECK
 const emailInput = document.getElementById("inputLogMain");
 const emailStatus = document.getElementById("email-status");
-const containerInput = document.getElementById("containerInput");
-// -------------------------0-------------------------
+
+emailInput.addEventListener("input", function () {
+  const email = emailInput.value;
+  const user = JSON.parse(localStorage.getItem(email));
+  if (user) {
+    emailStatus.classList.remove("invalid");
+    emailStatus.classList.add("valid");
+    emailStatus.textContent = "Email found!";
+    console.log("Email exists in localStorage.");
+    setTimeout(() => {
+      location.href = "../main/main.html";
+    }, 500);
+  } else {
+    emailStatus.classList.remove("valid");
+    emailStatus.classList.add("invalid");
+    emailStatus.textContent = "Email not found.";
+    console.log("Email does not exist in localStorage.");
+  }
+});
+
 // MODAL
 const singInBtn = document.getElementById("singIn");
 const singUpBtn = document.getElementById("singUp");
@@ -35,10 +44,11 @@ secondForm.addEventListener("submit", (e) => e.preventDefault());
 const loginForm = document.getElementById("login-form");
 const myModal = document.getElementById("myModal");
 const modalMain = document.querySelector("main");
+const containerInput = document.getElementById("containerInput");
+
 const startBtn = document.getElementById("startBtn");
 startBtn.classList.toggle("hidden");
 const body = document.body;
-
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
   myModal.classList.remove("hidden");
@@ -66,7 +76,7 @@ function registerUser() {
   let username = document.querySelector('input[type="text"]').value;
   let email = document.querySelector('input[type="email"]').value;
   let password = document.querySelector('input[type="password"]').value;
-
+  loginUser;
   if (localStorage.getItem(email)) {
     console.log(
       "User already exists. Please choose a different email address."
@@ -86,6 +96,7 @@ function registerUser() {
   console.log("Registration successful.");
   container.classList.remove("right-panel-active");
 }
+
 function loginUser() {
   let email = document.getElementById("inputLog");
   let password = document.getElementById("inputPass");
@@ -158,41 +169,26 @@ function startUserIcon() {
 }
 
 // SUCURITY
-document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     let isLoggedIn = localStorage.getItem("userLoggedIn");
     let loggedInUsername = localStorage.getItem("loggedInUsername");
     startUserIcon();
     if (isLoggedIn && loggedInUsername) {
       console.log("Welcome back, " + loggedInUsername + "!");
       loginForm.classList.toggle("hidden");
-      
       myModal.style.display = "none";
       startBtn.classList.toggle("hidden");
       containerInput.classList.toggle("hidden");
       let ready = document.querySelector(".ready");
-      ready.textContent = "";
+      ready.textContent = "";  
     }
   });
 
-// MAIL CHECK
-emailInput.addEventListener("input", function () {
-  const email = emailInput.value;
-  const user = JSON.parse(localStorage.getItem(email));
-  if (user) {
-    emailStatus.classList.remove("invalid");
-    emailStatus.classList.add("valid");
-    emailStatus.textContent = "Email found!";
-    console.log("Email exists in localStorage.");
-    setTimeout(() => {
-      location.href = "../main/main.html";
-    }, 500);
-  } else {
-    emailStatus.classList.remove("valid");
-    emailStatus.classList.add("invalid");
-    emailStatus.textContent = "Email not found.";
-    console.log("Email does not exist in localStorage.");
-  }
-});
+  window.onload = function () {
+    registerUser();
+};
+
+
 
 // export default username;
 // export default userData;
@@ -206,3 +202,15 @@ emailInput.addEventListener("input", function () {
 
 // window.onload = function () {
 // };
+
+// localStorage.clear();
+// localStorage.removeItem('email');
+// const singInBtn = require('./startJs/modal.js');
+// const singUpBtn = require('./startJs/modal.js');
+// const firstForm = require('./startJs/modal.js');
+// const secondForm = require('./startJs/modal.js');
+// const modalUser = require('./startJs/modal.js');
+// const emailInput = require('./startJs/mailCheck.js');
+// const emailStatus = require('./startJs/mailCheck.js');
+// const containerInput = require('./startJs/mailCheck.js');
+// ________________

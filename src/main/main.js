@@ -17,7 +17,6 @@ async function startMain(obj) {
         await addFilmToMain(tmp, `.${tmp}_item`, `.left_arrow_${tmp}`, `.right_arrow_${tmp}`);
     }
 }
-
 startMain(requests());
 
 

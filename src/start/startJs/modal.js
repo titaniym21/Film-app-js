@@ -6,6 +6,7 @@
 // const secondForm = document.getElementById('form2');
 // const container = document.querySelector('.container');
 
+
 // singInBtn.addEventListener('click', () => {
 //     container.classList.remove('right-panel-active');
 // });
@@ -15,4 +16,4 @@
 // firstForm.addEventListener('submit', (e) => e.preventDefault());
 // secondForm.addEventListener('submit', (e) => e.preventDefault());
 
-// module.exports = { singInBtn, singUpBtn, container, firstForm };
+// module.exports = { container };

@@ -4,6 +4,7 @@ const getRandomFilm = require('../js/mainJs/mainBackgroundImage');
 const requests = require('../js/mainJs/requests').requests;
 //const addHtmlToSliderBox = require('../js/mainJs/addHtmlToSliderBox');
 const fetchMovies = require('../js/mainJs/loadInfo').fetchMovies;
+const {createSliderTitle , createSliderHtml} = require('../js/mainJs/createSliderHtml');
 fetchMovies(requests());
 
 
@@ -11,10 +12,15 @@ fetchMovies(requests());
 async function startMain(obj) {
     const previewItemTitle = document.querySelector('.preview_item_title');
     const main = document.querySelector('.main');
-    getRandomFilm('netflixOriginals', main, previewItemTitle);
+    getRandomFilm('TopRated', main, previewItemTitle);
+    const sliderBox = document.querySelector('.slider_box');
     for (let key in obj) {
-        let tmp = key;
-        await addFilmToMain(tmp, `.${tmp}_item`, `.left_arrow_${tmp}`, `.right_arrow_${tmp}`);
+        let sliderTitle = await new createSliderTitle(key);
+        let sliderHtml = await new createSliderHtml(key);
+        sliderBox.append(sliderTitle);
+        sliderBox.append(sliderHtml);
+        //let tmp = key;
+        await addFilmToMain(key, `.${key}_item`, `.left_arrow_${key}`, `.right_arrow_${key}`);
     }
 }
 startMain(requests());

@@ -1,51 +1,61 @@
 const API_KEY = "b8147d9a2b320232dcbd7689528ce05a";
 
+function randomSort() {
+    let sortedType = ['', 'sort_by=popularity.desc', 'sort_by=release_date.desc', 'sort_by=revenue.desc','sort_by=primary_release_date.desc','sort_by=original_title.desc', 'sort_by=vote_average.desc', 'sort_by=vote_count.desc'];
+    let random = Math.floor(Math.random() * sortedType.length);
+    let sorted = sortedType[random];
+    // let sorted = [];
+    // for(key in requests){
+    //     sorted.push(sortedType[random]);
+    // }
+
+    return sorted;
+}
 
 
-
-function requests(page = 1) {
+function requests(page = 1, sorted) {
     let ganres = {
 
-        netflixOriginals: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`,
-        netflixPopular: `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=${page}`,
-        netflixTopRated: `https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`,
-        // netflixAction: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10759&with_original_language=en`,
-        // netflixAnimation: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=16&with_original_language=en`,
-        // netflixComedy: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=35&with_original_language=en`,
-        // netflixCrime: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=80&with_original_language=en`,
-        // netflixDocumentary: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=99&with_original_language=en`,
-        // netflixDrama: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=18&with_original_language=en`,
-        // netflixFamily: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10751&with_original_language=en`,
-        // netflixKids: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10762&with_original_language=en`,
-        // netflixMystery: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=9648&with_original_language=en`,
-        // netflixReality: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10764&with_original_language=en`,
-        // netflixSciFi: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10765&with_original_language=en`,
-        // netflixSoap: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10766&with_original_language=en`,
-        // netflixTalk: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10767&with_original_language=en`,
-        // netflixWar: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10768&with_original_language=en`,
-        // netflixWestern: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=37&with_original_language=en`,
+        //netflixOriginals: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`,
+        //netflixPopular: `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=${page}`,
+        //netflixTopRated: `https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`,
+        // netflixAction: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10759&with_original_language=en`,
+        // netflixAnimation: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=16&with_original_language=en`,
+        // netflixComedy: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=35&with_original_language=en`,
+        // netflixCrime: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=80&with_original_language=en`,
+        // netflixDocumentary: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=99&with_original_language=en`,
+        // netflixDrama: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=18&with_original_language=en`,
+        // netflixFamily: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10751&with_original_language=en`,
+        // netflixKids: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10762&with_original_language=en`,
+        // netflixMystery: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=9648&with_original_language=en`,
+        // netflixReality: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10764&with_original_language=en`,
+        // netflixSciFi: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10765&with_original_language=en`,
+        // netflixSoap: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10766&with_original_language=en`,
+        // netflixTalk: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10767&with_original_language=en`,
+        // netflixWar: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10768&with_original_language=en`,
+        // netflixWestern: `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=37&with_original_language=en`,
         
-        topRatedMovies: `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`,
-        popularMovies: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`,
-        // actionMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=28`,
-        // adventureMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=12`,
-        // animationMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=16`,
-        // comedyMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=35`,
-        // crimeMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=80`,
-        // documentaryMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=99`,
-        // dramaMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=18`,
-        // familyMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10751`,
-        // fantasyMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=14`,
-        // historyMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=36`,
-        // horrorMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=27`,
-        // musicMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10402`,
-        // mysteryMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=9648`,
-        // romanceMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10749`,
-        scienceFictionMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=revenue.desc&page=${page}&without_genres=878`,
-        // tvMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10770`,
-        // thrillerMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=53`,
-        // warMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=10752`,
-        // westernMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=${page}&without_genres=37`,
+        TopRated: `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`,
+        Popular: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`,
+        Action: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=28`,
+        Adventure: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=12`,
+        Animation: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=16`,
+        Comedy: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=35`,
+        Crime: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=80`,
+        Documentary: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=99`,
+        Drama: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=18`,
+        Family: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10751`,
+        Fantasy: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=14`,
+        History: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=36`,
+        Horror: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=27`,
+        Music: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10402`,
+        Mystery: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=9648`,
+        Romance: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10749`,
+        ScienceFiction: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=revenue.desc&page=${page}&without_genres=878`,
+        Tv: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10770`,
+        Thriller: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=53`,
+        War: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=10752`,
+        Western: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&${sorted}&page=${page}&without_genres=37`,
     };
 
     return ganres;

@@ -62,13 +62,12 @@ input::placeholder {
 
 .header {
   position: fixed;
-  top: 22px;
+  top: 0;
   left: 0px;
   width: 100%;
-  padding-top: 27px;
+  padding-top: 42px;
   padding-bottom: 42px;
   height: 20px;
-  z-index: 1;
   display: flex;
   justify-content: space-between;
   background-color: rgb(32, 32, 32);

@@ -26,7 +26,7 @@ function createSearchList(obj) {
     buttonClose.addEventListener('click', delBoxSearch);
     bg.append(buttonClose);
     body.append(bg);
-    body.children[1].style.display = 'none';
+    body.children[0].lastElementChild.style.display = 'none';
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -35,7 +35,7 @@ function createSearchList(obj) {
         bg.remove();
         searchInput.value = '';
         searchInput.placeholder = 'Result not found...';
-        body.children[1].style.display = 'block';
+        body.children[0].lastElementChild.style.display = 'block';
     }
 }
 

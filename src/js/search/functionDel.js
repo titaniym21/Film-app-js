@@ -11,7 +11,7 @@ function delModalWindow(event) {
 
 function delBoxSearch(event) {
     event.target.parentNode.remove();
-    body.children[1].style.display = 'block';
+    body.children[0].lastElementChild.style.display = 'block';
 }
 
 module.exports = {

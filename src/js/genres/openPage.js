@@ -34,7 +34,7 @@ function openFirstPage(obj) {
     let boxButton = new BoxButton();
     bg.append(buttonClose, boxButton);
     body.append(bg);
-    body.children[1].style.display = 'none';
+    body.children[0].lastElementChild.style.display = 'none';
     window.scrollTo({
         top: 0,
         behavior: 'smooth'

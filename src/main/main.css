@@ -100,10 +100,9 @@ a {
   border: white 2px solid;
   transition: 0.3s;
 }
-.genres{
+.genres {
   cursor: pointer;
 }
-
 
 /* выпадающие списки из header */
 

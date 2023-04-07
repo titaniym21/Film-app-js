@@ -364,6 +364,7 @@ a {
   position: absolute;
   z-index: 1;
   padding-bottom: 5px;
+  left: 0px;
   margin: 5px;
   font-size: 18px;
   min-width: 100px;

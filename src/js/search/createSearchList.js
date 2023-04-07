@@ -13,7 +13,7 @@ function createSearchList(obj) {
         if (obj[i].poster_path !== null) {
             let boxSearch = new BoxSearch();
             let posterInBox = new PosterInBox(obj[i]);
-            let title = new TitleInBox(obj[i]);
+            let title = new TitleInBox(obj[i],i);
             boxSearch.append(posterInBox, title);
             bg.append(boxSearch);
         }

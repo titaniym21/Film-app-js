@@ -40,6 +40,7 @@ function searchById(id) {
             body.append(bg);
             windowMod = new CreateModalWindow(obj);
             body.append(windowMod);
+            
         })
         .catch((error) => console.log(error))
 }

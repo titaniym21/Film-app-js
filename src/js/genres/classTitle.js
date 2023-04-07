@@ -1,10 +1,11 @@
 'use strict';
 
 class Title {
-    constructor(title) {
+    constructor(obj) {
         this.title = document.createElement('h2');
         this.title.classList.add('title-in-box');
-        this.title.textContent = `${title}`;
+        this.title.setAttribute('alt', obj.id);
+        this.title.textContent = `${obj.title}`;
         return this.title;
     }
 }

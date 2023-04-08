@@ -1,4 +1,5 @@
 "use strict";
+
 function startUserIcon() {
   let isLoggedIn = localStorage.getItem("userLoggedIn");
   let loggedInUsername = localStorage.getItem("loggedInUsername");

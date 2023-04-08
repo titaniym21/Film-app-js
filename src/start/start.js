@@ -35,17 +35,18 @@ body.addEventListener("click", function (event) {
   }
 });
 
-loginForm.addEventListener("click", function (event) {
-  if (myModal.style.display === "none") {
-    showModal();
-  }
-});
 
 function showModal() {
+  myModal.style.display = "block";
   myModal.classList.remove("hidden");
   myModal.classList.add("myModalMain");
   body.classList.add("blur");
   loginForm.style.visibility = "hidden";
+  loginForm.addEventListener("click", function (event) {
+      if (myModal.style.display === "none") {
+        showModal();
+      }
+    });
 }
 
 function hideModal() {
@@ -79,7 +80,7 @@ function registerUser() {
   console.log("Registration successful.");
   togglePanel();
 }
-
+// mukola@gmail.com
 function loginUser() {
   const emailInput = document.getElementById("inputLog");
   const passwordInput = document.getElementById("inputPass");
@@ -107,11 +108,12 @@ function togglePanel() {
   const container = document.querySelector(".container");
   container.classList.toggle("right-panel-active");
 }
+// ______________
 
 
-// window.onload = function () {
-//   registerUser();
-// };
+window.onload = function () {
+  registerUser();
+};
 
 // export default username;
 // export default userData;

@@ -30,7 +30,7 @@ class CreateModalWindow {
         this.budget = new Budget(obj);
         this.content.append(this.title, this.video, this.overview, this.genres, this.productionCompanies, this.budget);
         this.modalWindow.append(this.poster, this.content, this.buttonClose, this.buttonAdd);
-        arrWindow.push(this);
+        arrWindow.push(this.name);
         return this.modalWindow;
     }
 }

@@ -1,4 +1,5 @@
 "use strict";
+// const startUserIcon = require("./startJs/startUserIcon.js");
 
 function checkEmail() {
   const email = document.getElementById("inputLogMain").value;
@@ -23,9 +24,10 @@ function verifyEmail() {
         emailStatus.classList.add("valid");
         emailStatus.textContent = "Email found!";
         console.log("Email exists in localStorage.");
+        
         setTimeout(() => {
           location.href = "../main/main.html";
-        }, 500);
+        }, 1500);
       } else {
         emailStatus.classList.remove("valid");
         emailStatus.classList.add("invalid");

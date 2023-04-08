@@ -1,11 +1,11 @@
 "use strict";
 
-
 function initAuthentication() {
   const singInBtn = document.getElementById("singIn");
   const singUpBtn = document.getElementById("singUp");
   const firstForm = document.getElementById("form1");
   const secondForm = document.getElementById("form2");
+  const container = document.querySelector(".container");
 
   singInBtn.addEventListener("click", () => {
     container.classList.remove("right-panel-active");

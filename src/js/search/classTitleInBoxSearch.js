@@ -1,6 +1,6 @@
 'use strict';
 
-class Title {
+class TitleInBox {
     constructor(obj) {
         this.title = document.createElement('h2');
         this.title.classList.add('title-in-box');
@@ -10,4 +10,4 @@ class Title {
     }
 }
 
-module.exports = { Title };
+module.exports = { TitleInBox };

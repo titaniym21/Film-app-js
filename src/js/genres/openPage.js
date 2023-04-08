@@ -12,6 +12,7 @@ function openOtherPage(obj) {
     for (let i = 0; i < 20; i += 1) {
         collectionBgGenre[i].firstElementChild.src = `https://image.tmdb.org/t/p/w500${obj[i].poster_path}`;
         collectionBgGenre[i].lastElementChild.textContent = `${obj[i].title}`;
+        collectionBgGenre[i].lastElementChild.setAttribute('alt', obj[i].id);
     }
     window.scrollTo({
         top: 0,
@@ -25,7 +26,7 @@ function openFirstPage(obj) {
         if (obj[i].poster_path !== null) {
             let boxSearch = new BoxSearch();
             let posterInBox = new Poster(obj[i].poster_path);
-            let title = new Title(obj[i].title);
+            let title = new Title(obj[i]);
             boxSearch.append(posterInBox, title);
             bg.append(boxSearch);
         }

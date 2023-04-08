@@ -38,5 +38,3 @@ listFilm.addEventListener('click', bodyListener)
 tvSeries.addEventListener('click', bodyListener)
 
 module.exports = animationDropList;
-
-module.exports = animationDropList;

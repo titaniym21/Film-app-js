@@ -3,7 +3,6 @@ async function addSliderNextPage(obj, key, currIndex) {
     try {
       let tmp = JSON.parse(localStorage.getItem(key));
       let pageMas = tmp?.pageMas || [1];
-      console.log(pageMas);
       if (!tmp) {
         const response = await fetch(obj[key]);
         const data = await response.json();
@@ -25,7 +24,6 @@ async function addSliderNextPage(obj, key, currIndex) {
           tmp.results = result;
           tmp.pageMas = pageMas;
           localStorage.setItem(key, JSON.stringify(tmp));
-          console.log(tmp);
           await addFilmToMain(key, `.${key}_item`, `.left_arrow_${key}`, `.right_arrow_${key}`, currIndex);
         }
         return tmp;

@@ -16,7 +16,7 @@ const { Budget } = require('./classBudget');
 
 class CreateModalWindow {
     constructor(obj) {
-        this.name = obj.title;
+        this.name = { 0 : obj.title, 1 : obj.id };
         this.modalWindow = new ModalWindow();
         this.poster = new Poster(obj);
         this.content = new Content();

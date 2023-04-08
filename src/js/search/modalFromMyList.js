@@ -46,14 +46,11 @@ function searchById(id) {
 }
 
 function modalFromMyList(event) {
-    event.target.parentNode.classList.toggle("closeAnimHetflix");
-    let listItem = event.target.textContent;
-    let search = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${listItem}`;
-    fetch(search)
-        .then((data) => data.json())
-        .then((obj) => obj.results[0].id) 
-        .then((idFilm) => searchById(idFilm))
-        .catch((error) => console.log(error))
+    if (event.target.tagName === 'LI') {
+        event.target.parentNode.classList.toggle("closeAnimHetflix");
+        let id = event.target.getAttribute('alt');
+        searchById(id);
+    }
 }
 
 module.exports = modalFromMyList;

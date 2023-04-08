@@ -34,8 +34,6 @@ body.addEventListener("click", function (event) {
     hideModal();
   }
 });
-
-
 function showModal() {
   myModal.style.display = "block";
   myModal.classList.remove("hidden");
@@ -48,7 +46,6 @@ function showModal() {
       }
     });
 }
-
 function hideModal() {
   myModal.style.display = "none";
   modalMain.style.visibility = "visible";
@@ -109,8 +106,6 @@ function togglePanel() {
   container.classList.toggle("right-panel-active");
 }
 // ______________
-
-
 window.onload = function () {
   registerUser();
 };

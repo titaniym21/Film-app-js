@@ -77,21 +77,18 @@ function registerUser() {
   console.log("Registration successful.");
   togglePanel();
 }
-// mukola@gmail.com
 function loginUser() {
   const emailInput = document.getElementById("inputLog");
   const passwordInput = document.getElementById("inputPass");
   const userData = JSON.parse(localStorage.getItem(emailInput.value));
-
   if (!userData || userData.password !== passwordInput.value) {
     console.log("Invalid email or password.");
     return;
   }
-  console.log(`Login successful. Welcome ${userData.username}!`);
-  startUserIcon();
+  console.log(`Login successful. Welcome ${userData.email}!`);
   location.reload();
   localStorage.setItem("userLoggedIn", true);
-  localStorage.setItem("loggedInUsername", userData.username);
+  localStorage.setItem("loggedInUsername", userData.email);
 
   myModal.style.display = "none";
   startBtn.classList.toggle("hidden");
@@ -106,9 +103,12 @@ function togglePanel() {
   container.classList.toggle("right-panel-active");
 }
 // ______________
-window.onload = function () {
-  registerUser();
-};
+// window.onload = function () {
+//   registerUser();
+// };
+// ______________
+
+
 
 // export default username;
 // export default userData;
@@ -117,4 +117,5 @@ window.onload = function () {
 
 // localStorage.clear();
 // localStorage.removeItem('email');
+// localStorage.removeItem('username');
 

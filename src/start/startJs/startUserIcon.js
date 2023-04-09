@@ -3,6 +3,7 @@
 function startUserIcon() {
   let isLoggedIn = localStorage.getItem("userLoggedIn");
   let loggedInUsername = localStorage.getItem("loggedInUsername");
+  console.log(loggedInUsername);
 
   if (isLoggedIn && loggedInUsername) {
     const userIcon = document.createElement("img");

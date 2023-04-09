@@ -6,13 +6,30 @@ const listFilm = document.getElementById('listFilm');
 const listPopular = document.getElementById('listPopular');
 const listMy = document.getElementById('listMy');
 const tvSeries = document.getElementById('tvseries');
+let arrList = [listFilm, listPopular, listMy];
+
+function closeAllList() {
+    for (let i = 0; i < arrList.length; i += 1) {
+        if (arrList[i].classList.contains("animHetflix")) {
+            arrList[i].classList.add("closeAnimHetflix");
+            arrList[i].classList.remove("animHetflix");
+        }
+    }
+}
 
 function openCloseList(list) {
     if (list.classList.contains("animHetflix")) {
-        list.classList.toggle("closeAnimHetflix");
+        closeAllList();
+        list.classList.add("closeAnimHetflix");
+        list.classList.remove("animHetflix");
+    } else if (list.classList.contains("closeAnimHetflix")) {
+        closeAllList();
+        list.classList.add("animHetflix");
+        list.classList.remove("closeAnimHetflix");
     } else {
-        list.classList.toggle("animHetflix");
-    }
+        closeAllList();
+        list.classList.add("animHetflix");
+    }  
 }
 
 function animationDropList(event) {
@@ -25,6 +42,9 @@ function animationDropList(event) {
             break;
         case 'my':
             openCloseList(listMy);
+            break;
+        case 'tvseries':
+            closeAllList();
             break;
     }
 }

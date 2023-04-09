@@ -1,7 +1,7 @@
 'use strict';
 
-const { beforeFiveButtons } = require('./beforeAfterButtons');
-const { afterFiveButtons } = require('./beforeAfterButtons');
+const { beforeFiveButtons } = require('../genres/beforeAfterButtons');
+const { afterFiveButtons } = require('../genres/beforeAfterButtons');
 
 class Box {
     constructor() {

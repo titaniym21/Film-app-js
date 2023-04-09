@@ -1,11 +1,11 @@
 'use strict';
 
-const { Bg } = require('./classBg');
-const { BoxSearch } = require('./classBoxSearch');
-const { Poster } = require('./classPoster');
-const { Title } = require('./classTitle');
-const { ButtonClose } = require('./classButtonClose');
-const { BoxButton } = require('./classBoxButton');
+const { Bg } = require('../classGenres/classBg');
+const { BoxSearch } = require('../classGenres/classBoxSearch');
+const { Poster } = require('../classGenres/classPoster');
+const { Title } = require('../classGenres/classTitle');
+const { ButtonClose } = require('../classGenres/classButtonClose');
+const { BoxButton } = require('../classGenres/classBoxButton');
 
 function openOtherPage(obj) {
     let collectionBgGenre = bgGenre.children;

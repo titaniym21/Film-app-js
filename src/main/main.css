@@ -163,6 +163,7 @@ a {
 
 .list_Hetflix li:hover {
   background-color: rgba(0, 0, 0, 0.474);
+  cursor: pointer;
 }
 
 .list_Home {

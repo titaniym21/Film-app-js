@@ -4,7 +4,7 @@ const delFromLocalStorage = require('./delFromLocalStorage');
 
 function delFromMyList(event) {
     if (event.target.tagName === 'SPAN') {
-        let key = localStorage.getItem('loggedInUsername');
+        let key = `key-${localStorage.getItem('loggedInUsername')}`;
         let id = event.target.parentNode.getAttribute('alt');
         let arr = JSON.parse(localStorage.getItem(key));
         delFromLocalStorage(arr, id, key);

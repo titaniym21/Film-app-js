@@ -1,7 +1,7 @@
 'use strict';
 
 const addLastElemList = require('./myListAfterLogin');
-let key = localStorage.getItem('loggedInUsername');
+let key = `key-${localStorage.getItem('loggedInUsername')}`;
 
 function addFilmToFavorites() { 
     let film = arrWindow.arrWindow[arrWindow.arrWindow.length - 1];

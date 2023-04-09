@@ -1,7 +1,7 @@
 'use strict'
 
 const addFilmToList = require('./addFilmToList');
-let key = localStorage.getItem('loggedInUsername');
+let key = `key-${localStorage.getItem('loggedInUsername')}`;
 
 function myListAfterLogin() {
     let arr = JSON.parse(localStorage.getItem(key));
@@ -12,7 +12,8 @@ function myListAfterLogin() {
 
 document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem(key) !== null) {
-        nameUser.textContent = key;
+        let objUser = JSON.parse(localStorage.getItem(localStorage.getItem('loggedInUsername')));
+        nameUser.textContent = objUser.username;
         myListAfterLogin();
     }
 });

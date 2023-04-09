@@ -1,11 +1,11 @@
 'use strict';
 
 const body = document.body;
-const { Bg } = require('./classBgForList'); 
-const { BoxSearch } = require('./classBoxSearch'); 
-const { PosterInBox } = require('./classPosterInBoxSearch');
-const { TitleInBox } = require('./classTitleInBoxSearch');
-const { ButtonCloseSearch } = require('./classButtonCloseSearch');
+const { Bg } = require('../classSearch/classBgForList'); 
+const { BoxSearch } = require('../classSearch/classBoxSearch'); 
+const { PosterInBox } = require('../classSearch/classPosterInBoxSearch');
+const { TitleInBox } = require('../classSearch/classTitleInBoxSearch');
+const { ButtonCloseSearch } = require('../classSearch/classButtonCloseSearch');
 
 function createSearchList(obj) {
     let bg = new Bg();

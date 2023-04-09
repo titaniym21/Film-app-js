@@ -1,6 +1,6 @@
 'use strict';
 
-const getElemFromList = require('./getElemFromList');
+const getElemFromList = require('../search/getElemFromList');
 
 class Bg {
     constructor() {

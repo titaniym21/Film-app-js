@@ -1,15 +1,15 @@
 'use strict';
 
-const { ModalWindow } = require('./classModalWindow');
-const { Poster } = require('./classPoster');
-const { Content } = require('./classContent');
-const { ButtonClose } = require('./classButtonClose');
-const { Title } = require('./classTitle');
-const { Video } = require('./classVideo');
-const { Overview } = require('./classOverview');
-const { Genres } = require('./classGenres');
-const { ProductionCompanies } = require('./classProductionCompanies');
-const { Budget } = require('./classBudget');
+const { ModalWindow } = require('../classSearch/classModalWindow');
+const { Poster } = require('../classSearch/classPoster');
+const { Content } = require('../classSearch/classContent');
+const { ButtonClose } = require('../classSearch/classButtonClose');
+const { Title } = require('../classSearch/classTitle');
+const { Video } = require('../classSearch/classVideo');
+const { Overview } = require('../classSearch/classOverview');
+const { Genres } = require('../classSearch/classGenres');
+const { ProductionCompanies } = require('../classSearch/classProductionCompanies');
+const { Budget } = require('../classSearch/classBudget');
 let windowMod;
 
 class CreateModalWindow {

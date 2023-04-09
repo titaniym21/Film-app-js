@@ -1,6 +1,6 @@
 'use strict';
 
-const addFilmToFavorites = require('./addFilmToFavorites');
+const addFilmToFavorites = require('../search/addFilmToFavorites');
 
 class ButtonAdd {
     constructor() {

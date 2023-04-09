@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="./style/main_conrainer_sryle.css">
+    <link rel="stylesheet" href="./style/main_conrainer_sryle.css" />
     <script defer src="main.js"></script>
     <!-- <script defer src="../start/start.js"></script> -->
     <title>Film-app/main</title>
@@ -28,10 +28,19 @@
         <div class="user_menu">
           <div class="search">
             <input id="searchInput" type="text" placeholder="Search..." />
+            <img id="searchButton" src="../img/search.png" alt="" />
           </div>
-          <img id="searchButton" src="../img/search.png" alt="" />
 
-          <div class="user"></div>
+          <div class="user">
+            <img
+              src="../start/img/user-icon.png"
+              alt="User Icon"
+              width="33"
+              height="33"
+              class="userIcon"
+            />
+            <span id="nameUser"></span>
+          </div>
         </div>
 
         <ul class="list_Hetflix list_Film" id="listFilm">

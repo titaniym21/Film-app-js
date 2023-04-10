@@ -2,6 +2,8 @@
 
 const modalFromMyList = require('./modalFromMyList');
 
+// функция создает елемент и добавляет его в конец списка избранного
+
 function addFilmToList(title) { 
     let listMy = document.getElementById('listMy');
     let liInMyList = document.createElement('li');

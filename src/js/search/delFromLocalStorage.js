@@ -1,5 +1,7 @@
 'use strict'
 
+// функция удаляет по id элемент с избранного и сохраняет изминения 
+
 function delFromLocalStorage(arr, id, key) {
     for (let i = 0; i < arr.length; i += 1) {
         if (arr[i][1] === Number(id)) {

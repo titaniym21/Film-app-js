@@ -2,9 +2,13 @@
 const getInfoForList = require('./getInfoForList');
 let genre;
 
+// функция сохраняет актуальный жанр
+
 function saveGenres(arg) {
     genre = arg;
 }
+
+// передает жанр и страницу которую хотим запросить
 
 function genresFactory(page = 1) {
     if (genre === 'Action') {

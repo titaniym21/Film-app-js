@@ -7,6 +7,8 @@ const { Title } = require('../classGenres/classTitle');
 const { ButtonClose } = require('../classGenres/classButtonClose');
 const { BoxButton } = require('../classGenres/classBoxButton');
 
+// перезаписывает данные в элементах на другие данные из выбранной страницы жанра
+
 function openOtherPage(obj) {
     let collectionBgGenre = bgGenre.children;
     for (let i = 0; i < 20; i += 1) {
@@ -19,6 +21,8 @@ function openOtherPage(obj) {
         behavior: 'smooth'
     });
 }
+
+// открывает первую страницу выбранного жанра
 
 function openFirstPage(obj) {
     let bg = new Bg();

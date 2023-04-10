@@ -1,5 +1,8 @@
 'use strict';
 
+// функции для модального окна - информация о фильме 
+// получает массив видео, ищет тип видео - триллер, когда находит возращает ключ к этому ютуб ролику
+
 function getTrailer(arrVideo) {
     let keyYouTube;
     for (let i = 0; i < arrVideo.length; i += 1) {
@@ -10,6 +13,8 @@ function getTrailer(arrVideo) {
     }
     return keyYouTube;
 }
+
+// получает массив объектов с жанрами, возвращает строку жанров 
 
 function getGenres(arrGenres) {
     let genresInfo = 'Genres: ';
@@ -22,6 +27,8 @@ function getGenres(arrGenres) {
     }
     return genresInfo;
 }
+
+// получает массив объектов с названием компаний, возвращает строку названий
 
 function getProductionCompanies(arrPC) {
     let pcInfo = 'Production Companies: ';

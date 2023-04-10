@@ -8,6 +8,8 @@ const listMy = document.getElementById('listMy');
 const tvSeries = document.getElementById('tvseries');
 let arrList = [listFilm, listPopular, listMy];
 
+// закрывает любой выпадающий список при нажатии на tvseries
+
 function closeAllList() {
     for (let i = 0; i < arrList.length; i += 1) {
         if (arrList[i].classList.contains("animHetflix")) {
@@ -16,6 +18,8 @@ function closeAllList() {
         }
     }
 }
+
+// анимация выпадающего списка
 
 function openCloseList(list) {
     if (list.classList.contains("animHetflix")) {
@@ -31,6 +35,8 @@ function openCloseList(list) {
         list.classList.add("animHetflix");
     }  
 }
+
+// функция проверяет на ком сработал обработчик и вызывает нужный выпадающий список
 
 function animationDropList(event) {
     switch (event.target.id) {
@@ -48,6 +54,8 @@ function animationDropList(event) {
             break;
     }
 }
+
+// вешает слушатель на body при открытии жанров, избранного
 
 function bodyListener() {
     document.body.addEventListener('click', genreListener)

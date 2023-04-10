@@ -12,6 +12,8 @@ const { ProductionCompanies } = require('../classSearch/classProductionCompanies
 const { Budget } = require('../classSearch/classBudget');
 let windowMod;
 
+// класс создает объект модального окна из списка избранного(без кнопки +)
+
 class CreateModalWindow {
     constructor(obj) {
         this.modalWindow = new ModalWindow();
@@ -30,6 +32,8 @@ class CreateModalWindow {
     }
 }
 
+// запрос на сервер и создание модального окна с информацией из промиса(список избранного)
+
 function searchById(id) {
     let search = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
     fetch(search)
@@ -44,6 +48,8 @@ function searchById(id) {
         })
         .catch((error) => console.log(error))
 }
+
+// считывает id с элемента избранного на котором сработал слушатель и передает его в функию с запросом
 
 function modalFromMyList(event) {
     if (event.target.tagName === 'LI') {

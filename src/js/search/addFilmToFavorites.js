@@ -3,6 +3,8 @@
 const addLastElemList = require('./myListAfterLogin');
 let key = `key-${localStorage.getItem('loggedInUsername')}`;
 
+// функция сохраняет добавления в избранное по ключу(каждого пользователя)
+
 function addFilmToFavorites() { 
     let film = arrWindow.arrWindow[arrWindow.arrWindow.length - 1];
     if (localStorage.getItem(key) === null) {

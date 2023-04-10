@@ -2,6 +2,7 @@ const addSliderNextPage = require('./addSliderNextPage');
 const requests = require('./requests').requests;
 const searchById = require('../search/searchById');
 const {API_KEY} = require('./requests').API_KEY;
+const heckSizeAttributes2 = require('./sizeWindow').CheckSizeAttributes2;
 
 async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) {
   let currentIndex = currIndex;
@@ -9,14 +10,7 @@ async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) 
   let page = (maxIndex + 1) / 20 + 1;
   const items = element.querySelectorAll(".item_wrapper");
   function showItem(index) {
-    items.forEach((item) => {
-      item.style.display = "none";
-    });
-    items[index].style.display = "block";
-    items[index + 1].style.display = "block";
-    items[index + 2].style.display = "block";
-    items[index + 3].style.display = "block";
-    items[index + 4].style.display = "block";
+    heckSizeAttributes2(items, index);
   }
   showItem(currentIndex);
 
@@ -28,9 +22,9 @@ async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) 
   prevBtn.addEventListener("click", prevBtnClickHandler);
 
   const nextBtnClickHandler = () => {
-    currentIndex = Math.min(currentIndex + 1, maxIndex - 4);
+    currentIndex = Math.min(currentIndex + 1, maxIndex - 5);
     console.log(currentIndex);
-    if (currentIndex === maxIndex - 4) {
+    if (currentIndex === maxIndex - 5) {
       nextBtn.removeEventListener("click", nextBtnClickHandler);
       prevBtn.removeEventListener("click", prevBtnClickHandler);
       // items.forEach((item) => {

@@ -3,6 +3,8 @@
 const { genresFactory } = require('./genresFactory');
 const { saveGenres } = require('./genresFactory');
 
+// вызов фабрики жанра по странице
+
 function genreListener(event) {
     if (event.target.tagName === 'LI') {
         event.target.parentNode.classList.add("closeAnimHetflix");

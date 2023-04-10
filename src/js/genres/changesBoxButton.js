@@ -1,5 +1,7 @@
 'use strict'
 
+// выделяет выбранную страницу(кнопка)
+
 function changesBoxButton(page) {
     let collection = boxButton.children;
     for (let i = 1; i < 6; i += 1) {

@@ -34,7 +34,9 @@ const arrWindow = require('../js/search/createModalWindow');
 const body = document.body;
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
-const {API_KEY} = require('../js/mainJs/requests');
+const { API_KEY } = require('../js/mainJs/requests');
+
+// функция глобального поиска из инпут, вызывает функцию создание элемента с результатом поиска
 
 function globalSearch() {
     let input = searchInput.value;
@@ -45,6 +47,8 @@ function globalSearch() {
         .then((obj) => createSearchList(obj))
         .catch((error) => console.log(error))
 }
+
+// слушатель при поиске(enter)
 
 function enter(event) {
     if (event.key === 'Enter') {

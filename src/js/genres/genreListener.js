@@ -5,11 +5,24 @@ const { saveGenres } = require('./genresFactory');
 
 function genreListener(event) {
     if (event.target.tagName === 'LI') {
-        event.target.parentNode.classList.toggle("closeAnimHetflix");
+        event.target.parentNode.classList.add("closeAnimHetflix");
+        event.target.parentNode.classList.remove("animHetflix");
         saveGenres(event.target.textContent);
         genresFactory();
     } else if (event.target.tagName === 'SPAN') {
         genresFactory(event.target.textContent);
+    } else if (event.target.textContent === '>') {
+        if (boxButton.children[5].textContent === '500') {
+            genresFactory(boxButton.children[5].textContent);
+        } else {
+            genresFactory(boxButton.children[1].textContent);
+        }
+    } else if (event.target.textContent === '<') {
+        if (boxButton.children[5].textContent === '5') {
+            genresFactory(boxButton.children[1].textContent);
+        } else {
+            genresFactory(boxButton.children[5].textContent);
+        }
     } else if (event.target.textContent === 'TV series') {
         saveGenres(event.target.textContent);
         genresFactory();

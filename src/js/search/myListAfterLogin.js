@@ -5,13 +5,15 @@ let key = `key-${localStorage.getItem('loggedInUsername')}`;
 
 function myListAfterLogin() {
     let arr = JSON.parse(localStorage.getItem(key));
-    for (let i = 0; i < arr.length; i += 1) {
-        addFilmToList(arr[i]);
+    if (arr !== null) {
+        for (let i = 0; i < arr.length; i += 1) {
+            addFilmToList(arr[i]);
+        }
     }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    if (localStorage.getItem(key) !== null) {
+    if (localStorage.getItem('loggedInUsername') !== null) {
         let objUser = JSON.parse(localStorage.getItem(localStorage.getItem('loggedInUsername')));
         nameUser.textContent = objUser.username;
         myListAfterLogin();

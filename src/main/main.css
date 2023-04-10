@@ -93,9 +93,15 @@ a {
 }
 
 #title_menu div:hover {
-  border: white 2px solid;
-  transition: 0.3s;
+  opacity: 0.4;
+  transition: 0.1s;
 }
+
+#title_menu div:active {
+  scale: 0.7;
+  transition: 0.1s;
+}
+
 .genres {
   cursor: pointer;
 }
@@ -119,7 +125,7 @@ a {
 }
 @keyframes openlist {
   0% {
-    top: -250px;
+    top: -400px;
     opacity: 0;
   }
   50% {
@@ -143,7 +149,7 @@ a {
     opacity: 0.1;
   }
   100% {
-    top: -250px;
+    top: -400px;
     opacity: 0;
   }
 }
@@ -178,8 +184,16 @@ a {
 }
 
 .list_My {
+  width: 400px;
   position: absolute;
-  left: 615px;
+  left: 512px;
+  display: flex;
+  align-items: center;
+}
+
+.list_My li {
+  width: fit-content;
+  padding: 2px 10px 2px 10px;
 }
 
 .user_menu {

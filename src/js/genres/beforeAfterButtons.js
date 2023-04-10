@@ -7,6 +7,8 @@ function beforeFiveButtons() {
         let collection = boxButton.children;
         for (let i = 1; i < 6; i += 1) {
             collection[i].textContent = Number(collection[i].textContent) - 5;
+            collection[i].style.backgroundColor = 'rgb(67, 67, 67)';
+            collection[i].style.scale = '1.0';
         }
     }
 }
@@ -18,6 +20,8 @@ function afterFiveButtons() {
         let collection = boxButton.children;
         for (let i = 1; i < 6; i += 1) {
             collection[i].textContent = Number(collection[i].textContent) + 5;
+            collection[i].style.backgroundColor = 'rgb(67, 67, 67)';
+            collection[i].style.scale = '1.0';
         }
     }
 }

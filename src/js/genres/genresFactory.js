@@ -48,6 +48,9 @@ function genresFactory(page = 1) {
     } 
 }
 
-exports.genresFactory = genresFactory;
-exports.saveGenres = saveGenres;
+module.exports = {
+    genresFactory,
+    saveGenres
+};
+
 

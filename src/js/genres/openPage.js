@@ -33,6 +33,8 @@ function openFirstPage(obj) {
     }
     let buttonClose = new ButtonClose();
     let boxButton = new BoxButton();
+    boxButton.children[1].style.backgroundColor = 'black';
+    boxButton.children[1].style.scale = '1.1';
     bg.append(buttonClose, boxButton);
     body.append(bg);
     body.children[0].lastElementChild.style.display = 'none';

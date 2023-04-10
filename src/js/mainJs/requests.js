@@ -1,9 +1,9 @@
 const API_KEY = "b8147d9a2b320232dcbd7689528ce05a";
-sorted = 'sort_by=popularity.desc';
+const sorted = 'sort_by=popularity.desc';
 
 
 
-function requests(page = 1, sorted) {
+function requests(page = 1) {
     let ganres = {
         Popular: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`,
         //TopRated: `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`,

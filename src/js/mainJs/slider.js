@@ -22,35 +22,36 @@ async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) 
 
   const prevBtnClickHandler = () => {
     currentIndex = Math.max(currentIndex - 1, 0);
-    //console.log(currentIndex);
+    console.log(currentIndex);
     showItem(currentIndex);
   };
   prevBtn.addEventListener("click", prevBtnClickHandler);
 
   const nextBtnClickHandler = () => {
     currentIndex = Math.min(currentIndex + 1, maxIndex - 4);
-    //console.log(currentIndex);
+    console.log(currentIndex);
     if (currentIndex === maxIndex - 4) {
       nextBtn.removeEventListener("click", nextBtnClickHandler);
-      items.forEach((item) => {
-        item.removeEventListener("click", itemClickHandler);
-      });
+      prevBtn.removeEventListener("click", prevBtnClickHandler);
+      // items.forEach((item) => {
+      //   //item.removeEventListener("click", itemClickHandler);
+      // });
       return addSliderNextPage(requests(page), genreName, currentIndex);
     }
     showItem(currentIndex);
   };
   nextBtn.addEventListener("click", nextBtnClickHandler);
 
-  const itemClickHandler = (event) => {
+  // const itemClickHandler = (event) => {
      
-  };
+  //  };
   items.forEach((item) => {
     item.addEventListener("click",async function(event) {
-      const numObj = await event.target.alt;
-      const thisObj = await obj.results[numObj];
-      //console.log(thisObj);
-      const id = await thisObj.id;
-      searchById(id);
+      const target = event.target;
+      console.log(target);
+      // const id = await event.target.id;
+      // console.log(id);
+      // searchById(id);
     });
   });
 }

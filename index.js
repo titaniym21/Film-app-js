@@ -1,5 +1,7 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain} = require('electron');
 const path = require('path');
+
+
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -18,12 +20,22 @@ const createWindow = () => {
     },
   });
 
+  // отправляем сообщение в файл test.js с текущим размером окна
+  const sendWindowSize = () => {
+    const { width, height } = win.getSize();
+    win.webContents.send('window-size', { width, height });
+  };
 
+  app.once('ready-to-show', () => {
+    // устанавливаем обработчик события resize после того, как окно будет создано и отображено
+    win.on('resize', sendWindowSize);
+    sendWindowSize();
+  });
 
 
   // and load the index.html of the app.
   mainWindow.loadFile('./src/start/start.html');
-
+  
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 };

@@ -20,13 +20,7 @@ function startUserIcon() {
 
     const dropdownContent = document.createElement("div");
     dropdownContent.classList.add("dropdown-content");
-    const div1 = document.createElement("div");
-    div1.classList.add("dropdown-content");
-    const profileLink = document.createElement("a");
-    profileLink.href = "#";
-    profileLink.textContent = "Settings";
-    dropdownContent.appendChild(profileLink);
-    dropdownContent.appendChild(div1);
+    
     const div2 = document.createElement("div");
     const logoutLink = document.createElement("a");
     logoutLink.href = "#";

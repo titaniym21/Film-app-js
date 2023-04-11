@@ -22,26 +22,30 @@
 			</form>
 		</div>
 	</header>
+  
 <section class="hidden" id="myModal">
   <div class="container right-panel-active">
     <div class="container-form container-singup">
       <form action="#" class="form" id="form1">
       <h2 class="form-tittle">Register a new user</h2>
       <input type="text" placeholder="User" class="input">
-      <input type="email" placeholder="email" class="input">
-      <input type="password" placeholder="password" class="input">
+      <input id="email" type="email" placeholder="email" class="input">
+      <input id="password" type="password" placeholder="password" class="input">
       <button class="btn" onclick="registerUser()">Register now</button>
       </form>
     </div>
     <div class="container-form container-singin">
       <form action="#" class="form" id="form2">
-      <h2 class="form-tittle">Sing In</h2> 
-      <input type="email" placeholder="email" class="input" id="inputLog">
-      <input type="password" placeholder="password" class="input" id="inputPass"> 
-      <a href="#" class="link">Forgot you password?</a>
-      <button class="btn" onclick="loginUser()">Login</button>
+        <h2 class="form-tittle">Sing In</h2> 
+        <input type="email" placeholder="email" class="input" id="inputLog">
+        <input type="password" placeholder="password" class="input" id="inputPass"> 
+        <!-- <a href="#" class="link">Forgot your password?</a> -->
+        <button class="btn" onclick="loginUser()">Login</button>
+        <div id="passwordChanged" class="linkPass hidden">Password has been changed</div>
+        <button class="btnPassword" onclick="changePassword()">Change password</button>
       </form>
     </div>
+    
     <div class="container-over">
       <div class="overlay">
         <div class="overlay-panel left-over">
@@ -54,13 +58,15 @@
     </div>
   </div>
 </section>  
-	<main>  
+	<main> 
+     
 		<h1>Join Hetflix Today</h1>
 	<p class="ready">Ready to watch? Enter your email to create or restart your membership.</p>
 <div class="container-input" id="containerInput">
   <input type="email" placeholder="email" class="inputMain" id="inputLogMain">
 <span id="email-status" class="status"></span>
 </div>
+
     <a href="../main/main.html"><button id="startBtn" type="button" class="btn">Get Started</button></a>
 	</main>
 </body>

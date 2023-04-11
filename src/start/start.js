@@ -54,10 +54,14 @@ function hideModal() {
   loginForm.style.visibility = "visible";
 }
 
+let usernameInput;
+let emailInput;
+let passwordInput;
+
 function registerUser() {
-  const usernameInput = document.querySelector('input[type="text"]');
-  const emailInput = document.querySelector('input[type="email"]');
-  const passwordInput = document.querySelector('input[type="password"]');
+  usernameInput = document.querySelector('input[type="text"]');
+  emailInput = document.querySelector('input[type="email"]');
+  passwordInput = document.querySelector('input[type="password"]');
 
   if (localStorage.getItem(emailInput.value)) {
     console.log(
@@ -77,12 +81,13 @@ function registerUser() {
   console.log("Registration successful.");
   togglePanel();
 }
+
 function loginUser() {
-  const emailInput = document.getElementById("inputLog");
-  const passwordInput = document.getElementById("inputPass");
+  emailInput = document.getElementById("inputLog");
+  passwordInput = document.getElementById("inputPass");
   const userData = JSON.parse(localStorage.getItem(emailInput.value));
   if (!userData || userData.password !== passwordInput.value) {
-    console.log("Invalid email or password.");
+    console.log(passwordInput.value, "Invalid email or password.");
     return;
   }
   console.log(`Login successful. Welcome ${userData.email}!`);
@@ -102,6 +107,40 @@ function togglePanel() {
   const container = document.querySelector(".container");
   container.classList.toggle("right-panel-active");
 }
+
+function changePassword() {
+  emailInput = document.getElementById("inputLog");
+  console.log(emailInput.value);
+  passwordInput = document.getElementById("inputPass");
+  console.log(passwordInput.value);
+  const userData = JSON.parse(localStorage.getItem(emailInput.value));
+  if (!userData) {
+    console.log(passwordInput.value, "User does not exist.");
+    return;
+  }
+  document.querySelector(".btnPassword").classList.add("changed");
+  const passwordChangedMsg = document.getElementById("passwordChanged");
+  passwordChangedMsg.classList.remove("hidden");
+  setTimeout(() => {
+    passwordChangedMsg.classList.add("hidden");
+  }, 3500);
+  userData.password = passwordInput.value;
+  localStorage.setItem(emailInput.value, JSON.stringify(userData));
+  console.log(`Password for ${userData.email} has been updated.`);
+  emailInput.value = "";
+  passwordInput.value = "";
+}
+
+// mukola@gmail.com
+
+
+
+
+
+
+
+
+
 // ______________
 // window.onload = function () {
 //   registerUser();

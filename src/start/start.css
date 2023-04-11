@@ -416,3 +416,23 @@ main {
   height: 100vh;
   flex-direction: column;
 }
+.btnPassword{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 150px;
+}
+.changed {
+  background-color: rgb(232, 232, 232);
+  color: rgb(255, 255, 255);
+  pointer-events: none;
+}
+.linkPass {
+  position: absolute;
+  right: 170px;
+  bottom: 25px;
+  color: var(--gray);
+  font-size: 1.0rem;
+  margin: 1.5px;
+  text-decoration: none;
+}

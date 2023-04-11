@@ -14,6 +14,8 @@ const { Genres } = require('../classSearch/classGenres');
 const { ProductionCompanies } = require('../classSearch/classProductionCompanies');
 const { Budget } = require('../classSearch/classBudget');
 
+// класс создает объект модального окна из поиска или жанров(с кнопокой +)
+
 class CreateModalWindow {
     constructor(obj) {
         this.name = { 0 : obj.title, 1 : obj.id };

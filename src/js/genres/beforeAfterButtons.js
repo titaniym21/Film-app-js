@@ -1,5 +1,7 @@
 'use strict';
 
+// перерисовывает кнопки страниц в жанрах(предыдущие 5 страниц)
+
 function beforeFiveButtons() {
     if (boxButton.children[1].textContent === '1') {
         return;
@@ -12,6 +14,8 @@ function beforeFiveButtons() {
         }
     }
 }
+
+// перерисовывает кнопки страниц в жанрах(следующие 5 страниц)
 
 function afterFiveButtons() {
     if (boxButton.children[5].textContent === '500') {

@@ -3,7 +3,7 @@ async function fetchMovies(obj) {
   for (let key in obj) {
       try {
           const keyName = `${key}`;
-          console.log(keyName);
+          //console.log(keyName);
           const storedData = localStorage.getItem(keyName);
           if (storedData && (new Date().getTime() - JSON.parse(storedData).timestamp) < 24 * 60 * 60 * 1000) {
               //console.log(`Используем данные ${key} из localStorage.`);

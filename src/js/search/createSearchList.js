@@ -7,6 +7,8 @@ const { PosterInBox } = require('../classSearch/classPosterInBoxSearch');
 const { TitleInBox } = require('../classSearch/classTitleInBoxSearch');
 const { ButtonCloseSearch } = require('../classSearch/classButtonCloseSearch');
 
+// создает элемент с результатом поиска
+
 function createSearchList(obj) {
     let bg = new Bg();
     for (let i = 0; i < obj.length; i += 1) {

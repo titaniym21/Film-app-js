@@ -3,6 +3,8 @@
 let windowModal;
 const { CreateModalWindow } = require('./createModalWindow');
 
+// запрос на сервер и создание модального окна с информацией из промиса(мейн, поиск, жанры)
+
 function searchById(id) {
         let search = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
         let search2 = `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&append_to_response=videos`;

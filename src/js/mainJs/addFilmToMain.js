@@ -1,6 +1,6 @@
 const initSlider = require('./slider');
 const getHtmlData = require('./dataToHtml');
-const sizeWindow = require('./sizeWindow');
+const Init = require('./sizeWindow').Init;
 
 async function addFilmToMain(genreName, elementSelector, leftArrowSelector, rightArrowSelector, currIndex = 0) {
     let movies = JSON.parse(localStorage.getItem(genreName));
@@ -10,7 +10,7 @@ async function addFilmToMain(genreName, elementSelector, leftArrowSelector, righ
     const leftArrow = document.querySelector(leftArrowSelector);
     const rightArrow = document.querySelector(rightArrowSelector);
     await initSlider(leftArrow, rightArrow, element, movies, genreName, currIndex);
-    sizeWindow();
+    Init();
 }
 
 module.exports = addFilmToMain;

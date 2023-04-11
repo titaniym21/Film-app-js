@@ -1,4 +1,7 @@
 "use strict";
+const requests = require('../js/mainJs/requests').requests;
+const fetchMovies = require('../js/mainJs/loadInfo').fetchMovies;
+fetchMovies(requests());
 
 const { verifyEmail } = require("./startJs/chekEmail.js");
 verifyEmail();

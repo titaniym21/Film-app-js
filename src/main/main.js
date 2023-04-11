@@ -65,9 +65,18 @@ searchButton.addEventListener('click', globalSearch);
 //--------------------------------------------модальное окно------------------------------------------------------------
 
 
+const ScrollFunction = () => {
+    let header = document.getElementsByClassName("header")[0];
+    if (document.documentElement.scrollTop > 1) {
+        header.classList.add("header-active");
+    } else {
+        header.classList.remove("header-active");
+    }
+};
 
-
-
+window.onscroll = function () {
+    ScrollFunction();
+}
 
 
 

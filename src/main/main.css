@@ -1,3 +1,10 @@
+:root {
+  /* --black: black;
+  --gray: #1e1e1e;
+  --red: #e50914; */
+  --lightRed: #f2242e;
+}
+
 /* * {
   margin: 0;
   padding: 0;
@@ -416,9 +423,59 @@ iframe {
 /*  margin-top: 10px;*/
 /*  height: 80px;*/
 /*}*/
-
-.userIcon {
-  background-color: white;
-  border-radius: 50%;
+span{
+  color: #ffffff;
+}
+#user-info {
+  padding-bottom: 10px;
+  margin-bottom: auto;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.user {
+  position: absolute;
+  top: 12px;
+  right: 50px;
+  z-index: 200;
+}
+.dropdown {
+  position: relative;
+  bottom: 5px;
   padding: 5px;
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  padding-bottom: 5px;
+  left: 0px;
+  margin: 5px;
+  font-size: 18px;
+  min-width: 100px;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+  position: absolute;
+  right: 5px;
+}
+a:hover{
+  color: var(--lightRed);
+}
+.username {
+  height: 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.userIcon {
+  position: relative;
+  top: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 5px;
+  margin-right: 6px;
 }

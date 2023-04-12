@@ -4,6 +4,8 @@ const getRandomFilm = require('../js/mainJs/mainBackgroundImage');
 const requests = require('../js/mainJs/requests').requests;
 const createSliderHtml = require('../js/mainJs/createSliderHtml');
 const Init = require('../js/mainJs/sizeWindow').Init;
+const { startUserIcon } = require("../start/startJs/startUserIcon.js");
+startUserIcon();
 
 
 

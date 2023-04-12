@@ -7,7 +7,7 @@ function startUserIcon() {
 
   if (isLoggedIn && loggedInUsername) {
     const userIcon = document.createElement("img");
-    userIcon.src = "./img/user-icon.png";
+    userIcon.src = "../start/img/user-icon.png";
     userIcon.alt = "User Icon";
     userIcon.width = 33;
     userIcon.height = 33;

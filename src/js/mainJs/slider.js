@@ -43,9 +43,9 @@ async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) 
     item.addEventListener("click",async function(event) {
       const target = event.target;
       console.log(target);
-      // const id = await event.target.id;
-      // console.log(id);
-      // searchById(id);
+      const id = await event.target.id;
+      console.log(id);
+      searchById(id);
     });
   });
 }

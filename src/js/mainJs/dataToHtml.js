@@ -1,4 +1,9 @@
 //функция для получения html кода для слайдера
+const addFilmToFavorites = require('../search/addFilmToFavorites');
+
+
+
+
 function leftArrow (key) {
     const sliderHtmlLeftArrow = document.createElement('div');
     sliderHtmlLeftArrow.classList.add(`left_arrow_${key}`);
@@ -38,7 +43,7 @@ async function getHtmlData(masData, key) {
           const imageUrl = URL.createObjectURL(imageBlob);
           const itemWrapper = document.createElement('div');
           itemWrapper.classList.add('item_wrapper');
-          itemWrapper.setAttribute('id', `${id}`);
+          //itemWrapper.setAttribute('id', `${id}`);
           itemWrapper.style.backgroundImage = `url(${imageUrl})`;
           const overlay = document.createElement('div');
           overlay.classList.add('overlay');
@@ -53,18 +58,22 @@ async function getHtmlData(masData, key) {
           watch.style.backgroundImage = `url(../img/play-button-red.png)`;
           const imgWatch = document.createElement('img');
           imgWatch.setAttribute('src', '../img/play-button-red.png');
+          imgWatch.setAttribute('id', `${id}`);
           watch.append(imgWatch);
           buttonContainer.append(watch);
           const queue = document.createElement('div');
           queue.classList.add('add');
           const imgAdd = document.createElement('img');
           imgAdd.setAttribute('src', '../img/add.png');
+          imgAdd.setAttribute('id', `${id}`);
+          imgAdd.addEventListener('click', addFilmToFavorites);
           queue.append(imgAdd);
           buttonContainer.append(queue);
           const info = document.createElement('div');
           info.classList.add('info');
           const imgInfo = document.createElement('img');
           imgInfo.setAttribute('src', '../img/info.png');
+          imgInfo.setAttribute('id', `${id}`);
           info.append(imgInfo);
           buttonContainer.append(info);
           overlay.append(buttonContainer);

@@ -1,7 +1,5 @@
-'use strict';
-
+"use strict";
 let arrWindow = [];
-
 const { ModalWindow } = require('../classSearch/classModalWindow');
 const { Poster } = require('../classSearch/classPoster');
 const { Content } = require('../classSearch/classContent');
@@ -13,12 +11,21 @@ const { Overview } = require('../classSearch/classOverview');
 const { Genres } = require('../classSearch/classGenres');
 const { ProductionCompanies } = require('../classSearch/classProductionCompanies');
 const { Budget } = require('../classSearch/classBudget');
-
-// класс создает объект модального окна из поиска или жанров(с кнопокой +)
-
 class CreateModalWindow {
+    name;
+    modalWindow;
+    poster;
+    content;
+    buttonClose;
+    buttonAdd;
+    title;
+    video;
+    overview;
+    genres;
+    productionCompanies;
+    budget;
     constructor(obj) {
-        this.name = { title : obj.title, id : obj.id };
+        this.name = { title: obj.title, id: obj.id };
         this.modalWindow = new ModalWindow();
         this.poster = new Poster(obj);
         this.content = new Content();
@@ -33,12 +40,12 @@ class CreateModalWindow {
         this.content.append(this.title, this.video, this.overview, this.genres, this.productionCompanies, this.budget);
         this.modalWindow.append(this.poster, this.content, this.buttonClose, this.buttonAdd);
         arrWindow.push(this.name);
+    }
+    getModalWindow() {
         return this.modalWindow;
     }
 }
-
 module.exports = {
     CreateModalWindow,
     arrWindow
-}
-
+};

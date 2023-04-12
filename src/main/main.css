@@ -108,7 +108,7 @@ select {
 
 /* выпадающие списки из header */
 
-.list_Hetflix {
+/* .list_Hetflix {
   width: 200px;
   position: absolute;
   top: -400px;
@@ -194,7 +194,7 @@ select {
 .list_My li {
   width: fit-content;
   padding: 2px 10px 2px 10px;
-}
+} */
 
 /*.user_menu {*/
 /*  width: 33%;*/

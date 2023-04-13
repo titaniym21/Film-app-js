@@ -1,5 +1,7 @@
 'use strict';
 
+const { delBoxSearch } = require("../search/functionDel");
+
 class ButtonClose {
     constructor() {
         this.buttonClose = document.createElement('div');

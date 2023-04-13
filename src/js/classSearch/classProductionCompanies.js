@@ -1,5 +1,7 @@
 'use strict';
 
+const { getProductionCompanies } = require('../search/getData');
+
 class ProductionCompanies {
     constructor(obj) {
         this.productionCompanies = document.createElement('div');

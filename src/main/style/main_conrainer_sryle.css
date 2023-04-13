@@ -86,6 +86,7 @@ a {
 
 
 .logo img {
+    display: block;
   margin-left: 10px;
   margin-top: 10px;
   margin-right: 10px;
@@ -117,8 +118,10 @@ a {
 }
 
 .header .header-menu {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 .header-menu .genres {
@@ -817,7 +820,9 @@ a {
   .slider_box {
       padding: 30px;
   }
-
+  span{
+    display: none;
+   }
   /* .search-area-content .input-area input {
       height: 40px;
   }
@@ -863,19 +868,13 @@ a {
   .modal-content {
       max-width: 100%;
   } */
+
 }
 
-@media screen and (max-width: 815px) {
+@media screen and (max-width: 870px) {
   .header {
       min-height: 70px;
       height: auto;
-  }
-  .list_Film {
-    left: 0;
-  }
-  
-  .list_Popular {
-    left: 0;
   }
 }
 

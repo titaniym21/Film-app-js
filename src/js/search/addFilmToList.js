@@ -1,6 +1,7 @@
 'use strict'
 
 const modalFromMyList = require('./modalFromMyList');
+const { delFromMyList } = require('./functionDel');
 
 // функция создает елемент и добавляет его в конец списка избранного
 

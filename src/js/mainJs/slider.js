@@ -3,6 +3,7 @@ const requests = require('./requests').requests;
 const searchById = require('../search/searchById');
 const {API_KEY} = require('./requests').API_KEY;
 const heckSizeAttributes2 = require('./sizeWindow').CheckSizeAttributes2;
+const createModalWinPlayer = require('./CreateModalWindowPlayer');
 
 async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) {
   let currentIndex = currIndex;
@@ -41,11 +42,22 @@ async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) 
   //  };
   items.forEach((item) => {
     item.addEventListener("click",async function(event) {
-      const target = event.target;
-      console.log(target);
-      const id = await event.target.id;
-      console.log(id);
-      searchById(id);
+      const alt = await event.target.alt;
+      const classList = await event.target.classList;
+      console.log(alt);
+      console.log(classList.value);
+      if(classList.value === 'play-img') {
+        searchById(alt, 'video');
+      }
+      if(classList.value === 'info-img') {
+        searchById(alt);
+      }
+      if(classList.value === 'add-img') {
+        searchById(alt, 'add');
+      }
+      else {
+        return;
+      }
     });
   });
 }

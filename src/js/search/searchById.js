@@ -18,7 +18,7 @@ function searchById(id) {
                         let bg = document.createElement('section');
                         bg.classList.add('bg');
                         body.append(bg);
-                        windowModal = new CreateModalWindow(obj);
+                        windowModal = new CreateModalWindow(obj).getModalWindow();
                         body.append(windowModal);
                     }
                 } catch (error) {
@@ -33,7 +33,7 @@ function searchById(id) {
                                      let bg = document.createElement('section');
                                      bg.classList.add('bg');
                                      body.append(bg);
-                                     windowModal = new CreateModalWindow(obj);
+                                     windowModal = new CreateModalWindow(obj).getModalWindow();
                                      body.append(windowModal);
                                  }
                              } catch (error) {

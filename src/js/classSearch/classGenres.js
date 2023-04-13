@@ -3,7 +3,9 @@
 class Genres {
     constructor(obj) {
         this.genres = document.createElement('div');
-        this.genres.textContent = getGenres(obj.genres);
+        this.p = document.createElement('p');
+        this.p.textContent = getGenres(obj.genres);
+        this.genres.append(this.p);
         return this.genres;
     }
 }

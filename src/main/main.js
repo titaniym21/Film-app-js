@@ -8,7 +8,6 @@ const { startUserIcon } = require("../start/startJs/startUserIcon.js");
 startUserIcon();
 
 
-
 async function startMain(obj) {
     getRandomFilm('Popular');
     const sliderBox = document.querySelector('.slider_box');

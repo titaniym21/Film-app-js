@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", 
+    "module": "System", 
+    "esModuleInterop": true,            
+    "forceConsistentCasingInFileNames": true, 
+    "strict": true,              
+    "skipLibCheck": true, 
+    "outDir": "src/js/genres/",
+    "removeComments": true,
+    "watch": true
+  },
+  "include": ["src/ts/genres/*"],
+  "exclude": ["node_modules"]
+}

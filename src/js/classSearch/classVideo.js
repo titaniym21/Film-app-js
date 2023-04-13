@@ -1,5 +1,7 @@
 'use strict';
 
+const { getTrailer } = require('../search/getData');
+
 class Video {
     constructor(obj) {
         this.video = document.createElement('iframe');

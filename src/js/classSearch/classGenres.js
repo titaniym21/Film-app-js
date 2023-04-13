@@ -1,7 +1,5 @@
 'use strict';
 
-const { getGenres } = require('../search/getData');
-
 class Genres {
     constructor(obj) {
         this.genres = document.createElement('div');

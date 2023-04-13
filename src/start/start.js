@@ -42,7 +42,7 @@ function showModal() {
   myModal.classList.remove("hidden");
   myModal.classList.add("myModalMain");
   body.classList.add("blur");
-  loginForm.classList.add("hidden");
+  loginForm.style.visibility = "hidden";
   loginForm.addEventListener("click", function (event) {
       if (myModal.style.display === "none") {
         showModal();
@@ -54,7 +54,7 @@ function hideModal() {
   modalMain.style.visibility = "visible";
   body.classList.remove("blur");
   modalMain.style.filter = "none";
-  loginForm.classList.remove("hidden");
+  loginForm.style.visibility = "visible";
 }
 
 let usernameInput;
@@ -97,7 +97,6 @@ function loginUser() {
   location.reload();
   localStorage.setItem("userLoggedIn", true);
   localStorage.setItem("loggedInUsername", userData.email);
-  localStorage.setItem("username", userData.username);
 
   myModal.style.display = "none";
   startBtn.classList.toggle("hidden");

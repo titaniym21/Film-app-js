@@ -1,7 +1,5 @@
 'use strict';
 
-const { delModalWindow } = require('../search/functionDel');
-
 class ButtonClose {
     constructor() {
         this.buttonClose = document.createElement('div');

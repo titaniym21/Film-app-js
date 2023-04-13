@@ -424,8 +424,6 @@ iframe {
 /*  height: 80px;*/
 /*}*/
 span{
-  padding-top: 10px;
-  display: block;
   color: #ffffff;
 }
 #user-info {
@@ -437,9 +435,9 @@ a {
   color: #fff;
 }
 .user {
-  position: relative;
-  top: 0px;
-  right: 20px;
+  position: absolute;
+  top: 12px;
+  right: 50px;
   z-index: 200;
 }
 .dropdown {
@@ -475,7 +473,7 @@ a:hover{
 }
 .userIcon {
   position: relative;
-  top: 0px;
+  top: 8px;
   border-radius: 50%;
   background-color: #fff;
   padding: 5px;

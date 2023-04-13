@@ -18,8 +18,8 @@ function myListAfterLogin() {
 
 document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('loggedInUsername') !== null) {
-        //let objUser = JSON.parse(localStorage.getItem(localStorage.getItem('loggedInUsername')));
-        //nameUser.textContent = objUser.username;
+        let objUser = JSON.parse(localStorage.getItem(localStorage.getItem('loggedInUsername')));
+        nameUser.textContent = objUser.username;
         myListAfterLogin();
     }
 });

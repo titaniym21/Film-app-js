@@ -1,5 +1,5 @@
 const initSlider = require('./slider');
-const { getHtmlData } = require('./dataToHtml');
+const getHtmlData = require('./dataToHtml');
 const Init = require('./sizeWindow').Init;
 
 async function addFilmToMain(genreName, elementSelector, leftArrowSelector, rightArrowSelector, currIndex = 0) {

@@ -11,8 +11,7 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "stop": "killall electron",
-    "testing": "jest"
+    "stop": "killall electron"
   },
   "keywords": [],
   "author": {
@@ -31,8 +30,6 @@
     "@electron-forge/maker-zip": "^6.0.5",
     "electron": "^23.2.0",
     "electronmon": "^2.0.2",
-    "jest": "^29.5.0",
-    "jest-environment-jsdom": "^29.5.0",
     "typescript": "^5.0.4"
   }
 }

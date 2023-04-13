@@ -2,6 +2,7 @@ function checkLoginStatus() {
   let isLoggedIn = localStorage.getItem("userLoggedIn");
   let loggedInUsername = localStorage.getItem("loggedInUsername");
    
+  // тільки для електрон
   if (isLoggedIn && loggedInUsername) {
     console.log("Welcome back, " + loggedInUsername + "!");
     loginForm.classList.toggle("hidden");

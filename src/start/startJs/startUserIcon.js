@@ -3,7 +3,7 @@
 function startUserIcon() {
   let isLoggedIn = localStorage.getItem("userLoggedIn");
   let loggedInUsername = localStorage.getItem("loggedInUsername");
-  let isUserIn = localStorage.getItem("username");
+  console.log(loggedInUsername);
 
   if (isLoggedIn && loggedInUsername) {
     const userIcon = document.createElement("img");
@@ -13,8 +13,7 @@ function startUserIcon() {
     userIcon.height = 33;
     userIcon.classList.add("userIcon");
     const usernameIcon = document.createElement("span");
-    usernameIcon.textContent = isUserIn;
-    usernameIcon.querySelector('nameUser');
+    usernameIcon.textContent = loggedInUsername;
     const dropdown = document.createElement("div");
     dropdown.classList.add("dropdown");
     dropdown.appendChild(usernameIcon);
@@ -30,12 +29,10 @@ function startUserIcon() {
     dropdownContent.appendChild(logoutLink);
     dropdown.appendChild(dropdownContent);
     logoutLink.addEventListener("click", function (event) {
-        logoutLink.href = "../start/start.html";
+      event.preventDefault();
       localStorage.removeItem("userLoggedIn");
       localStorage.removeItem("loggedInUsername");
-      setTimeout(() => {
-        location.reload();
-      }, 100);
+      location.reload();
     });
 
     const userDiv = document.querySelector(".user");

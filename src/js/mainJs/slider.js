@@ -1,3 +1,13 @@
+// initSlider - функция инициализации одного слайдера  на main странице
+// prevBtn - кнопка "назад"
+// nextBtn - кнопка "вперед"
+// element - элемент, в котором находятся слайды с уникальным классом
+// obj - объект, в котором находятся данные о фильмах
+// genreName - название жанра
+// currIndex - текущий индекс слайда
+
+
+
 const addSliderNextPage = require('./addSliderNextPage');
 const requests = require('./requests').requests;
 const searchById = require('../search/searchById');
@@ -16,40 +26,36 @@ async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) 
 
   const prevBtnClickHandler = () => {
     currentIndex = Math.max(currentIndex - 1, 0);
-    console.log(currentIndex);
     showItem(currentIndex);
   };
   prevBtn.addEventListener("click", prevBtnClickHandler);
 
   const nextBtnClickHandler = () => {
     currentIndex = Math.min(currentIndex + 1, maxIndex - 5);
-    console.log(currentIndex);
+    //console.log(currentIndex);
     if (currentIndex === maxIndex - 5) {
       nextBtn.removeEventListener("click", nextBtnClickHandler);
       prevBtn.removeEventListener("click", prevBtnClickHandler);
-      // items.forEach((item) => {
-      //   //item.removeEventListener("click", itemClickHandler);
-      // });
       return addSliderNextPage(requests(page), genreName, currentIndex);
     }
     showItem(currentIndex);
   };
   nextBtn.addEventListener("click", nextBtnClickHandler);
 
-  // const itemClickHandler = (event) => {
-     
-  //  };
+  
   items.forEach((item) => {
-    item.addEventListener("click",async function(event) {
-      const alt = await event.target.alt;
-      const classList = await event.target.classList;
-      console.log(alt);
-      console.log(classList.value);
+    item.addEventListener("click",function(event) {
+      const alt = event.target.alt;
+      const classList = event.target.classList;
+      console.log(event.target);
       if (classList.value === 'play-img') {
         searchById(alt, 'video');
       }
       if (classList.value === 'info-img') {
         searchById(alt, 'info');
+      }
+      if(classList.value === 'add-img') {
+        console.log(obj.id);
       }
     });
   });

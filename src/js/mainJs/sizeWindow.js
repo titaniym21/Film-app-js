@@ -1,61 +1,16 @@
-let num_cards_GLOBAL = 5;
+// CheckSizeAttributes2 - функция для отрисовки количества елементов после инициализации слайдера
+// windowSize() функция для определения размера елементов main.html в зависимости от размера окна, возвращает ширину окна
+// IsMobile - функция определения размера окна (true - мобильное, false - десктопное)
+// CheckSizeAttributes - функция отображения количества елементов в каждом слайдере main.html в зависимости от размера окна
+// ArrowSliderStyle - функция для изменения стилей стрелок слайдера в зависимости от размера окна
+// CheckCards - для отрисовки карточек в зависимости от размера окна
+// ResizeHeader - функция для изменения стилей хедера в зависимости от размера окна
 
-
-const IsMobile = () => {
-    let width =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.getElementsByTagName("body")[0].clientWidth;
-    if (width <= 736) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-const CheckSizeAttributes = (num_cards_GLOBAL) => {
-    let width =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.getElementsByTagName("body")[0].clientWidth;
-
-    let carousels = document.getElementsByClassName("item_slider");
-
-    let old_num_cards = num_cards_GLOBAL;
-    let new_num_cards;
-
-    if (width > 1501) {
-        new_num_cards = 5;
-    } else if (width <= 1500 && width > 1100) {
-        new_num_cards = 4;
-    } else if (width <= 1100 && width > 520) {
-        new_num_cards = 3;
-    } else if (width <= 520) {
-        new_num_cards = 2;
-    }
-
-    for (let i = 0; i < carousels.length; i++) {
-        if (carousels[i].children.length > 2) {
-            
-            for (let j = 1; j < carousels[i].children.length - 1; j++) {
-                carousels[i].children[j].style.display = "none";
-            }
-            for (let j = 1; j < new_num_cards + 1; j++) {
-                carousels[i].children[j].style.display = "flex";
-            }
-        }
-    }
-
-    num_cards_GLOBAL = new_num_cards;
-    return num_cards_GLOBAL;
-};
 
 
 const CheckSizeAttributes2 = (htmlElement, currIndex) => {
-    let width =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.getElementsByTagName("body")[0].clientWidth;
+    let width = windowSize();
+         
 
     let items = htmlElement;
     items.forEach((item) => {
@@ -80,15 +35,67 @@ const CheckSizeAttributes2 = (htmlElement, currIndex) => {
             items[currIndex].style.display = "block";
             items[currIndex + 1].style.display = "block";
         }
-
-    return;
-
+    
+    return currIndex;
 
 };
 
 
 
-ArrowSliderStyle = (num_cards_GLOBAL) => {
+
+const windowSize = () => {
+    let width =
+            window.innerWidth ||
+                document.documentElement.clientWidth ||
+                        document.getElementsByTagName("body")[0].clientWidth;
+    return width;
+};           
+
+
+
+const IsMobile = () => {
+    let width = windowSize(); 
+    if (width <= 736) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+const CheckSizeAttributes = () => {
+    let width = windowSize();
+    let carousels = document.getElementsByClassName("item_slider");
+
+    let new_num_cards;
+
+    if (width > 1501) {
+        new_num_cards = 5;
+    } else if (width <= 1500 && width > 1100) {
+        new_num_cards = 4;
+    } else if (width <= 1100 && width > 520) {
+        new_num_cards = 3;
+    } else if (width <= 520) {
+        new_num_cards = 2;
+    }
+    for (let i = 0; i < carousels.length; i++) {
+        if (carousels[i].children.length > 2) {
+            
+            for (let j = 1; j < carousels[i].children.length - 1; j++) {
+                carousels[i].children[j].style.display = "none";
+            }
+            for (let j = 1; j < new_num_cards + 1; j++) {
+                carousels[i].children[j].style.display = "block";
+            }
+        }
+    }
+
+    
+    return new_num_cards;
+};
+
+
+ArrowSliderStyle = () => {
+    let tmpCards = CheckSizeAttributes();
     let carousels = document.getElementsByClassName("item_slider");
 
     for (let i = 0; i < carousels.length; i++) {
@@ -108,7 +115,7 @@ ArrowSliderStyle = (num_cards_GLOBAL) => {
         }
 
 
-        let num_cards = CheckSizeAttributes(num_cards_GLOBAL);
+        let num_cards = CheckSizeAttributes(tmpCards);
         let card_margin = 5;
         let initial_width = 1920;
         let initial_height = 1080;
@@ -132,9 +139,9 @@ ArrowSliderStyle = (num_cards_GLOBAL) => {
 };
 
 
-const CheckCards = (num_cards_GLOBAL) => {
+const CheckCards = () => {
     let carousels = document.getElementsByClassName("item_slider");
-
+    let tmpCards = CheckSizeAttributes();
 
     for (let i = 0; i < carousels.length; i++) {
         let carousel = carousels[i];
@@ -142,7 +149,7 @@ const CheckCards = (num_cards_GLOBAL) => {
         if (carousel) {
             carousel_width = carousel.offsetWidth;
         } else {
-            console.log("Элемент не найден");
+            console.error("Элемент не найден");
         }
 
         let btn_widthl = document.getElementsByClassName("arrow")[0];
@@ -153,10 +160,10 @@ const CheckCards = (num_cards_GLOBAL) => {
             btn_widthr = btn_widthr.offsetWidth;
             btn_width = btn_widthl + btn_widthr;
         }else {
-            console.log("Элемент не найден");
+            console.error("Элемент не найден");
         }
 
-        let num_cards = CheckSizeAttributes(num_cards_GLOBAL);
+        let num_cards = tmpCards;
         let card_margin = 5;
         let initial_width = 1920;
         let initial_height = 1080;
@@ -185,12 +192,9 @@ const CheckCards = (num_cards_GLOBAL) => {
 };
 
 const ResizeHeader = () => {
-    let width =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.getElementsByTagName("body")[0].clientWidth;
+    let width = windowSize();
+        
     if (width <= 815) {
-        console.log("Мобильная версия");
         if (document.getElementsByClassName("hamburger").length <= 0) {
             let header = document.getElementsByClassName("header")[0];
             let main_nav = header.getElementsByClassName("header-menu")[0];
@@ -247,12 +251,11 @@ const ResizeHeader = () => {
 };
 
 
-
-async function Init (){
-   await CheckSizeAttributes();
-   await ArrowSliderStyle(num_cards_GLOBAL);
-   await CheckCards(num_cards_GLOBAL);
-   await ResizeHeader();
+function Init (){
+   CheckSizeAttributes();
+   ArrowSliderStyle();
+   CheckCards();
+   ResizeHeader();
 }
 
 module.exports = {Init, CheckSizeAttributes, CheckSizeAttributes2};

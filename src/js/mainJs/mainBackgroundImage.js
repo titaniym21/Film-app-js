@@ -1,5 +1,6 @@
+
+
 const bigPosterImg = require('./requests').bigPosterImg;
-//const titlePoster = document.querySelector('.left-side');
 const backgroundPoster = document.querySelector('.preview_item');
 const previewIitemTitle = document.querySelector('.preview_item_title');
 const previewItemOverview = document.querySelector('.preview_item_overview');
@@ -16,7 +17,7 @@ async function getRandomFilm(ganresName) {
     backgroundPoster.style.backgroundImage = `url(${bigPosterImg() + posterPath})`;
     previewIitemTitle.textContent = title;
     previewItemOverview.textContent = overview;
-    previewItemPlay.setAttribute('id', `${id}`);
+    //previewItemPlay.setAttribute('id', `${id}`);
     previewItemPlay.addEventListener('click', () => {
         searchById(id, 'video');
     });

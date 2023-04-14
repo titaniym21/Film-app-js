@@ -27,7 +27,8 @@
             "./src/js/classSearch/classOverview.js",
             "./src/js/classSearch/classGenres.js",
             "./src/js/classSearch/classProductionCompanies.js",
-            "./src/js/classSearch/classBudget.js"
+            "./src/js/classSearch/classBudget.js",
+            "./README.md"
         ],
         "exclude": ["node_modules"],
         "includePattern": ".+\\.js(doc|x)?$",
@@ -43,3 +44,4 @@
         "monospaceLinks": false
     }
 } 
+

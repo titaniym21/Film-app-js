@@ -12,9 +12,30 @@ const { ProductionCompanies } = require('../classSearch/classProductionCompanies
 const { Budget } = require('../classSearch/classBudget');
 let windowMod;
 
-// класс создает объект модального окна из списка избранного(без кнопки +)
+/** @module modalFromMyList */
+
+/**
+ * The CreateModalWindow class creates an element with information and a trailer for the selected movie.
+ * The CreateModalWindow class uses various functionality from other modules: <br/>
+ * [ModalWindow]{@link module:classModalWindow~ModalWindow}, <br/>
+ * [Poster]{@link module:classPoster~Poster}, <br/>
+ * [Content]{@link module:classContent~Content}, <br/>
+ * [ButtonClose]{@link module:classButtonClose~ButtonClose}, <br/>
+ * [Title]{@link module:classTitle~Title}, <br/>
+ * [Video]{@link module:classVideo~Video}, <br/>
+ * [Overview]{@link module:classOverview~Overview}, <br/>
+ * [Genres]{@link module:classGenres~Genres}, <br/>
+ * [ProductionCompanies]{@link module:classProductionCompanies~ProductionCompanies}, <br/>
+ * [Budget]{@link module:classBudget~Budget}. <br/>
+ * @author Stanislav Kuzin <staskuzinman@gmail.com>
+ */
 
 class CreateModalWindow {
+     /**
+     * Create HTMLElement.
+     * @param {object} obj - promise object
+     * @returns {object}
+     */
     constructor(obj) {
         this.modalWindow = new ModalWindow();
         this.poster = new Poster(obj);
@@ -32,7 +53,13 @@ class CreateModalWindow {
     }
 }
 
-// запрос на сервер и создание модального окна с информацией из промиса(список избранного)
+/** 
+ * The searchById function makes a request to the server, we call the class constructor <br/>
+ * passing the promise object into the arguments. <br/>
+ * @author Stanislav Kuzin <staskuzinman@gmail.com> 
+ * @param {string} id - id of the movie for which there will be a request to the server
+ * @returns {undefined}
+ */
 
 function searchById(id) {
     let search = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
@@ -49,7 +76,14 @@ function searchById(id) {
         .catch((error) => console.log(error))
 }
 
-// считывает id с элемента избранного на котором сработал слушатель и передает его в функию с запросом
+/** 
+ * The modalFromMyList function checks on which tag the listener is on, <br/>
+ * if LI then considers the attribute (id) of the parent element <br/>
+ * and calls the function passing the id argument. <br/>
+ * @author Stanislav Kuzin <staskuzinman@gmail.com> 
+ * @param {object} event - the object where the listener fired
+ * @returns {undefined}
+ */
 
 function modalFromMyList(event) {
     if (event.target.tagName === 'LI') {

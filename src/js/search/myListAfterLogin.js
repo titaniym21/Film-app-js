@@ -3,7 +3,16 @@
 const addFilmToList = require('./addFilmToList');
 let key = `key-${localStorage.getItem('loggedInUsername')}`;
 
-// строит список избранного после авторизации пользователя  
+/** @module myListAfterLogin */
+
+/** 
+ * The myListAfterLogin function reads data from the storage, iterates over an array of objects, <br/>
+ * and each iteration calls the function passing the array object into it. <br/>
+ * The myListAfterLogin function uses various functions of the addFilmToList module: <br/>
+ * [addFilmToList]{@link module:addFilmToList~addFilmToList}. <br/>
+ * @author Stanislav Kuzin <staskuzinman@gmail.com> 
+ * @returns {undefined}
+ */
 
 function myListAfterLogin() {
     let arr = JSON.parse(localStorage.getItem(key));
@@ -14,17 +23,21 @@ function myListAfterLogin() {
     }
 }
 
-// после загрузки считывает пользователя и вызывает функуцию заполнения избранного
-
 document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('loggedInUsername') !== null) {
-        //let objUser = JSON.parse(localStorage.getItem(localStorage.getItem('loggedInUsername')));
-        //nameUser.textContent = objUser.username;
         myListAfterLogin();
     }
 });
 
-// передает последний добавленый элемент в избранное на отрисовку в блоке избранное
+/** 
+ * The addLastElemList function reads data from the storage, <br/>
+ * calls the element drawing function, passing the last object <br/>
+ * from the array into the argument.
+ * The addLastElemList function uses various functions of the addFilmToList module: <br/>
+ * [addFilmToList]{@link module:addFilmToList~addFilmToList}. <br/>
+ * @author Stanislav Kuzin <staskuzinman@gmail.com> 
+ * @returns {undefined}
+ */
 
 function addLastElemList() {
     let arr = JSON.parse(localStorage.getItem(key));

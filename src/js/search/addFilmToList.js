@@ -3,7 +3,14 @@
 const modalFromMyList = require('./modalFromMyList');
 const { delFromMyList } = require('./functionDel');
 
-// функция создает елемент и добавляет его в конец списка избранного
+/** @module addFilmToList */
+
+/** 
+ * The addFilmToList function creates an element and adds it to the dropdown list of favorites.
+ * @author Stanislav Kuzin <staskuzinman@gmail.com> 
+ * @param {object} - movie object where there is a title and id field
+ * @returns {undefined}
+ */
 
 function addFilmToList(obj) { 
     let listMy = document.getElementById('listMy');

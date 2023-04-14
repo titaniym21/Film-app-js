@@ -7,7 +7,20 @@ const { PosterInBox } = require('../classSearch/classPosterInBoxSearch');
 const { TitleInBox } = require('../classSearch/classTitleInBoxSearch');
 const { ButtonCloseSearch } = require('../classSearch/classButtonCloseSearch');
 
-// создает элемент с результатом поиска
+/** @module createSearchList */
+
+/**
+ * The createSearchList function creates an HTMLElement with the search result. <br/>
+ * The createSearchList function uses various functionality from other modules: <br/>
+ * [Bg]{@link module:classBgForList~Bg}, <br/>
+ * [BoxSearch]{@link module:classBoxSearch~BoxSearch}, <br/>
+ * [PosterInBox]{@link module:classPosterInBoxSearch~PosterInBox}, <br/>
+ * [TitleInBox]{@link module:classTitleInBoxSearch~TitleInBox}, <br/>
+ * [ButtonCloseSearch]{@link module:classButtonCloseSearch~ButtonCloseSearch}. <br/>
+ * @author Stanislav Kuzin <staskuzinman@gmail.com>
+ * @param {object} obj - the object with search results
+ * @returns {undefined}
+ */
 
 function createSearchList(obj) {
     let bg = new Bg();

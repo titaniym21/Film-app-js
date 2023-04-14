@@ -1,0 +1,45 @@
+{
+    "plugins": [],
+    "recurseDepth": 10,
+    "source": {
+        "include": [
+            "./src/js/search/functionDel.js", 
+            "./src/js/search/delFromLocalStorage.js",
+            "./src/js/search/createSearchList.js",
+            "./src/js/classSearch/classBgForList.js",
+            "./src/js/classSearch/classBoxSearch.js",
+            "./src/js/classSearch/classPosterInBoxSearch.js",
+            "./src/js/classSearch/classTitleInBoxSearch.js",
+            "./src/js/classSearch/classButtonCloseSearch.js",
+            "./src/js/search/getData.js",
+            "./src/js/search/addFilmToFavorites.js",
+            "./src/js/search/myListAfterLogin.js",
+            "./src/js/search/addFilmToList.js",
+            "./src/js/search/getElemFromList.js",
+            "./src/js/search/searchById.js",
+            "./src/js/search/modalFromMyList.js",
+            "./src/js/classSearch/classModalWindow.js",
+            "./src/js/classSearch/classPoster.js",
+            "./src/js/classSearch/classContent.js",
+            "./src/js/classSearch/classButtonClose.js",
+            "./src/js/classSearch/classTitle.js",
+            "./src/js/classSearch/classVideo.js",
+            "./src/js/classSearch/classOverview.js",
+            "./src/js/classSearch/classGenres.js",
+            "./src/js/classSearch/classProductionCompanies.js",
+            "./src/js/classSearch/classBudget.js"
+        ],
+        "exclude": ["node_modules"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    }
+} 

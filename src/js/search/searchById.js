@@ -4,7 +4,16 @@ let windowModal;
 const { CreateModalWindow } = require('./createModalWindow');
 const { CreateModalWindowPlayer } = require('../mainJs/CreateModalWindowPlayer');
 
-// запрос на сервер и создание модального окна с информацией из промиса(мейн, поиск, жанры)
+/** @module searchById */
+
+/** 
+ * The searchById function makes a request to the server, we call the class constructor <br/>
+ * passing the promise object into the arguments. <br/>
+ * @author Stanislav Kuzin <staskuzinman@gmail.com> 
+ * @param {string} id - id of the movie for which there will be a request to the server
+ * @param {string} key - identifier by which the modal window object is created
+ * @returns {undefined}
+ */
 
 function searchById(id, key = 'info') {
         let search = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;

@@ -3,7 +3,16 @@
 const addLastElemList = require('./myListAfterLogin');
 let key = `key-${localStorage.getItem('loggedInUsername')}`;
 
-// функция сохраняет добавления в избранное по ключу(каждого пользователя)
+/** @module addFilmToFavorites */
+
+/** 
+ * The addFilmToFavorites function adds an element to the array, writes it to the storage, <br/>
+ * and calls the add element to favorite function.
+ * The addFilmToFavorites function uses various functions of the myListAfterLogin module: <br/>
+ * [addLastElemList]{@link module:myListAfterLogin~addLastElemList}. <br/>
+ * @author Stanislav Kuzin <staskuzinman@gmail.com> 
+ * @returns {undefined}
+ */
 
 function addFilmToFavorites() { 
     let film = arrWindow.arrWindow[arrWindow.arrWindow.length - 1];

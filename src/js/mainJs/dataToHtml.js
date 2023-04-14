@@ -1,5 +1,5 @@
 //функция для получения html кода для слайдера
-const addFilmToFavorites = require('../search/addFilmToFavorites');
+const addFilmToFavoritesMain = require('../mainJs/addFilmToFavoritesMain');
 
 
 
@@ -40,6 +40,7 @@ async function getHtmlData(masData, key) {
           const imageBlob = await image.blob();
           const title = masData[i].original_title;
           const alt = masData[i].id;
+          //const obj = { title: masData[i].title, id: masData[i].id };
           const imageUrl = URL.createObjectURL(imageBlob);
           const itemWrapper = document.createElement('div');
           itemWrapper.classList.add('item_wrapper');
@@ -65,9 +66,8 @@ async function getHtmlData(masData, key) {
           queue.classList.add('add');
           const imgAdd = document.createElement('img');
           imgAdd.setAttribute('src', '../img/add.png');
-          imgAdd.setAttribute('alt', `${alt}`);
           imgAdd.classList.add('add-img');
-          imgAdd.addEventListener('click', addFilmToFavorites);
+          imgAdd.setAttribute('alt', `${title} + ${alt}`);
           queue.append(imgAdd);
           buttonContainer.append(queue);
           const info = document.createElement('div');

@@ -240,12 +240,12 @@ const ResizeHeader = () => {
             let header = document.getElementsByClassName("header")[0];
             let main_nav = header.getElementsByClassName("header-menu")[0];
             let right_nav = header.getElementsByClassName("user_menu")[0];
-            // let brand = header.getElementsByClassName("logo")[0];
+            let logo = header.getElementsByClassName("logo")[0];
 
             header.classList.remove("header-change");
             header.children[0].remove();
             header.children[0].remove();
-            header.append(main_nav, right_nav);
+            header.append(logo, main_nav, right_nav);
         }
     }
 };

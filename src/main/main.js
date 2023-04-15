@@ -4,7 +4,7 @@ const getRandomFilm = require('../js/mainJs/mainBackgroundImage');
 const requests = require('../js/mainJs/requests').requests;
 const createSliderHtml = require('../js/mainJs/createSliderHtml');
 const Init = require('../js/mainJs/sizeWindow').Init;
-const { startUserIcon } = require("../start/startJs/startUserIcon.js");
+const {startUserIcon} = require("../start/startJs/startUserIcon.js");
 startUserIcon();
 
 
@@ -17,6 +17,7 @@ async function startMain(obj) {
         await addFilmToMain(key, `.${key}_item`, `.left_arrow_${key}`, `.right_arrow_${key}`);
     }
 }
+
 startMain(requests()).then(() => Init());
 
 window.addEventListener("resize", () => {
@@ -35,7 +36,7 @@ const arrWindow = require('../js/search/createModalWindow');
 const body = document.body;
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
-const { API_KEY } = require('../js/mainJs/requests');
+const {API_KEY} = require('../js/mainJs/requests');
 
 // функция глобального поиска из инпут, вызывает функцию создание элемента с результатом поиска
 
@@ -44,7 +45,7 @@ function globalSearch() {
     let search = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${input}`;
     fetch(search)
         .then((data) => data.json())
-        .then((obj) => obj.results) 
+        .then((obj) => obj.results)
         .then((obj) => createSearchList(obj))
         .catch((error) => console.log(error))
 }

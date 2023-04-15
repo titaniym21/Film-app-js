@@ -12,6 +12,7 @@ const addSliderNextPage = require('./addSliderNextPage');
 const requests = require('./requests').requests;
 const searchById = require('../search/searchById');
 const {API_KEY} = require('./requests').API_KEY;
+const addFilmToFavoritesMain = require('./addFilmToFavoritesMain');
 const heckSizeAttributes2 = require('./sizeWindow').CheckSizeAttributes2;
 
 async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) {
@@ -32,7 +33,6 @@ async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) 
 
   const nextBtnClickHandler = () => {
     currentIndex = Math.min(currentIndex + 1, maxIndex - 5);
-    //console.log(currentIndex);
     if (currentIndex === maxIndex - 5) {
       nextBtn.removeEventListener("click", nextBtnClickHandler);
       prevBtn.removeEventListener("click", prevBtnClickHandler);
@@ -46,8 +46,8 @@ async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) 
   items.forEach((item) => {
     item.addEventListener("click",function(event) {
       const alt = event.target.alt;
+        console.log(alt);
       const classList = event.target.classList;
-      console.log(event.target);
       if (classList.value === 'play-img') {
         searchById(alt, 'video');
       }
@@ -55,7 +55,11 @@ async function initSlider(prevBtn, nextBtn, element, obj, genreName, currIndex) 
         searchById(alt, 'info');
       }
       if(classList.value === 'add-img') {
-        console.log(obj.id);
+          const parts = alt.split(" + ");
+          const title = parts[0];
+          const id = parseInt(parts[1]);
+          const movie = {title, id};
+          addFilmToFavoritesMain(movie);
       }
     });
   });

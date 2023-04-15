@@ -34,9 +34,5 @@ function requests(page = 1) {
     return ganres;
 };
 
-function bigPosterImg() {
-    return 'https://image.tmdb.org/t/p/original//';
-}
 
-
-module.exports = { requests, API_KEY, bigPosterImg };
+module.exports = {requests, API_KEY};

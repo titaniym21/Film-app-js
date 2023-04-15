@@ -12,16 +12,17 @@ Internet.**
 1. Download and install Node.js.
 
 2. Init folder:
-<blockquote>git init</blockquote>
+
+   > git init
 
 3. Сlone the repository:
 <blockquote>git clone https://github.com/titaniym21/Film-app-js.git</blockquote>
 
 4. Download used packages:
-<blockquote>npm ci package-lock.json</blockquote>
+   `npm ci package-lock.json`
 
 5. Now everything is ready to use. Сommand to run:
-<blockquote>npm run start</blockquote>
+   `npm run start`
 
 ## Tools for writing this work:
 

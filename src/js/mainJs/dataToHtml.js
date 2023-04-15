@@ -89,5 +89,6 @@ async function getHtmlData(masData, key) {
 
 module.exports = {
     getHtmlData,
-
+    leftArrow,
+    rightArrow
 };

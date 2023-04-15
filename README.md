@@ -1,3 +1,42 @@
+![Image alt](https://github.com/titaniym21/Film-app-js/blob/master/src/img/logo.png)
+
+# **Hetflix**
+
+**Hetflix is ​​a video streaming service that lets you watch
+a variety of award-winning TV series, movies, anime,
+documentaries and other content on thousands of devices connected to
+Internet.**
+
+## Settings to get started:
+
+1. Download and install Node.js.
+
+2. Init folder:
+<blockquote>git init</blockquote>
+
+3. Сlone the repository:
+<blockquote>git clone https://github.com/titaniym21/Film-app-js.git</blockquote>
+
+4. Download used packages:
+<blockquote>npm ci package-lock.json</blockquote>
+
+5. Now everything is ready to use. Сommand to run:
+<blockquote>npm run start</blockquote>
+
+## Tools for writing this work:
+
+- HTML5
+- CSS3
+- GIT
+- Github
+- JavaScript
+- TypeScript
+- Node.js
+- npm electron
+- npm jest
+- npm jsdoc
+- The Movie Database API
+
 ## Hetflix documentation
 
 - search documentation is described here

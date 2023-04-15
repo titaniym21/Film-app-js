@@ -1,4 +1,4 @@
-![Image alt](https://github.com/titaniym21/Film-app-js/blob/master/src/img/logo.png)
+![Image alt](https://github.com/titaniym21/Film-app-js/blob/master/src/img/NL-en-20230306-popsignuptwoweeks-perspective_alpha_website_large.jpg)
 
 # **Hetflix**
 
@@ -11,18 +11,13 @@ Internet.**
 
 1. Download and install Node.js.
 
-2. Init folder:
+2. Init folder: `git init`
 
-   > git init
+3. Сlone the repository: `git clone https://github.com/titaniym21/Film-app-js.git`
 
-3. Сlone the repository:
-<blockquote>git clone https://github.com/titaniym21/Film-app-js.git</blockquote>
+4. Download used packages: `npm ci package-lock.json`
 
-4. Download used packages:
-   `npm ci package-lock.json`
-
-5. Now everything is ready to use. Сommand to run:
-   `npm run start`
+5. Now everything is ready to use. Сommand to run: `npm run start`
 
 ## Tools for writing this work:
 

@@ -10,6 +10,12 @@ let arrList = [listFilm, listPopular, listMy];
 
 // закрывает любой выпадающий список при нажатии на tvseries
 
+function removeClose() {
+    for (let i = 0; i < arrList.length; i += 1) {
+        arrList[i].classList.remove("closeAnimHetflix");
+    }
+}
+
 function closeAllList() {
     for (let i = 0; i < arrList.length; i += 1) {
         if (arrList[i].classList.contains("animHetflix")) {
@@ -17,6 +23,7 @@ function closeAllList() {
             arrList[i].classList.remove("animHetflix");
         }
     }
+    setTimeout(() => removeClose(), 400);
 }
 
 // анимация выпадающего списка
@@ -61,8 +68,13 @@ function bodyListener() {
     document.body.addEventListener('click', genreListener)
 }
 
+function f1() {
+    console.log('f1')
+}
+
 listPopular.addEventListener('click', bodyListener)
 listFilm.addEventListener('click', bodyListener)
 tvSeries.addEventListener('click', bodyListener)
 
 module.exports = animationDropList;
+    

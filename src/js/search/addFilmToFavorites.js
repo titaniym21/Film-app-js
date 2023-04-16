@@ -22,9 +22,13 @@ function addFilmToFavorites() {
         addLastElemList();
     } else {
         let arr = JSON.parse(localStorage.getItem(key));
-        arr.push(film);
-        localStorage.setItem(key, JSON.stringify(arr));
-        addLastElemList();
+        if (arr.some((item) => item.id === film.id)) {
+            return;
+        } else {
+            arr.push(film);
+            localStorage.setItem(key, JSON.stringify(arr));
+            addLastElemList();
+        }
     }
 }
 

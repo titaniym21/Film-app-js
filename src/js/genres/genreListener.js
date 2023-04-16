@@ -9,6 +9,7 @@ function genreListener(event) {
     if (event.target.tagName === 'LI') {
         event.target.parentNode.classList.add("closeAnimHetflix");
         event.target.parentNode.classList.remove("animHetflix");
+        event.target.parentNode.classList.remove("closeAnimHetflix");
         saveGenres(event.target.textContent);
         genresFactory();
     } else if (event.target.tagName === 'SPAN') {

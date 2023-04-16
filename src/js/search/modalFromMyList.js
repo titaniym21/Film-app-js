@@ -89,6 +89,7 @@ function modalFromMyList(event) {
     if (event.target.tagName === 'LI') {
         event.target.parentNode.classList.add("closeAnimHetflix");
         event.target.parentNode.classList.remove("animHetflix");
+        event.target.parentNode.classList.remove("closeAnimHetflix");
         let id = event.target.getAttribute('alt');
         searchById(id);
     }

@@ -36,7 +36,8 @@ const arrWindow = require('../js/search/createModalWindow');
 const body = document.body;
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
-const {API_KEY} = require('../js/mainJs/requests');
+const { API_KEY } = require('../js/mainJs/requests');
+let input = searchInput;
 
 // функция глобального поиска из инпут, вызывает функцию создание элемента с результатом поиска
 
@@ -56,11 +57,16 @@ function enter(event) {
     if (event.key === 'Enter') {
         if (searchInput.value.length > 0) {
             globalSearch();
+            body.removeEventListener('keydown', enter);
         }
     }
 }
 
-body.addEventListener('keydown', enter);
+function focusInput() {
+    body.addEventListener('keydown', enter);
+}
+
+input.addEventListener('focus', focusInput)
 searchButton.addEventListener('click', globalSearch);
 
 
@@ -79,6 +85,7 @@ const ScrollFunction = () => {
 window.onscroll = function () {
     ScrollFunction();
 }
+
 
 
 

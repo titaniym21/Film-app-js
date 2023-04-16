@@ -16,6 +16,7 @@ function addFilmToList(obj) {
     let listMy = document.getElementById('listMy');
     let liInMyList = document.createElement('li');
     liInMyList.classList.add('in_Hetflix');
+    liInMyList.classList.add('list_width');
     liInMyList.addEventListener('click', modalFromMyList);
     liInMyList.textContent = obj.title;
     liInMyList.setAttribute('alt', obj.id);

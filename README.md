@@ -2,12 +2,9 @@
 
 # **Hetflix**
 
-**Hetflix is ​​a video streaming service that lets you watch
-a variety of award-winning TV series, movies, anime,
-documentaries and other content on thousands of devices connected to
-Internet.**
+_Hetflix is ​​a video resource that allows you to choose what to watch: TV series, anime, movies, documentaries and more on thousands of movies connected to the Internet. The app provides information on over 200000 movies. You can watch the trailer, read the basic information about the film and decide what you will watch by adding the film to your favorites._
 
-## Settings to get started:
+### Settings to get started:
 
 1. Download and install Node.js.
 
@@ -19,7 +16,7 @@ Internet.**
 
 5. Now everything is ready to use. Сommand to run: `npm run start`
 
-## Tools for writing this work:
+### Tools for writing this work:
 
 - HTML5
 - CSS3
@@ -33,7 +30,7 @@ Internet.**
 - npm jsdoc
 - The Movie Database API
 
-## Hetflix documentation
+### Hetflix documentation:
 
 - search documentation is described here
 - any user can make their own changes

@@ -43,6 +43,7 @@ function showModal() {
   myModal.classList.add("myModalMain");
   body.classList.add("blur");
   loginForm.classList.add("hidden");
+  containerInput.classList.add("hidden");
   loginForm.addEventListener("click", function (event) {
       if (myModal.style.display === "none") {
         showModal();
@@ -55,6 +56,7 @@ function hideModal() {
   body.classList.remove("blur");
   modalMain.style.filter = "none";
   loginForm.classList.remove("hidden");
+  containerInput.classList.remove("hidden");
 }
 
 let usernameInput;

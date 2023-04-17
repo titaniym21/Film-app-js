@@ -8,7 +8,7 @@
 
 
 
-const CheckSizeAttributes2 = (htmlElement, currIndex) => {
+export function checkSizeAttributes2 (htmlElement, currIndex){
     let width = windowSize();
          
 
@@ -43,7 +43,7 @@ const CheckSizeAttributes2 = (htmlElement, currIndex) => {
 
 
 
-const windowSize = () => {
+function windowSize(){
     let width =
             window.innerWidth ||
                 document.documentElement.clientWidth ||
@@ -53,7 +53,7 @@ const windowSize = () => {
 
 
 
-const IsMobile = () => {
+function IsMobile(){
     let width = windowSize(); 
     if (width <= 736) {
         return true;
@@ -62,7 +62,7 @@ const IsMobile = () => {
     }
 };
 
-const CheckSizeAttributes = () => {
+export function CheckSizeAttributes (){
     let width = windowSize();
     let carousels = document.getElementsByClassName("item_slider");
 
@@ -94,7 +94,7 @@ const CheckSizeAttributes = () => {
 };
 
 
-ArrowSliderStyle = () => {
+function ArrowSliderStyle(){
     let tmpCards = CheckSizeAttributes();
     let carousels = document.getElementsByClassName("item_slider");
 
@@ -139,7 +139,7 @@ ArrowSliderStyle = () => {
 };
 
 
-const CheckCards = () => {
+function CheckCards(){
     let carousels = document.getElementsByClassName("item_slider");
     let tmpCards = CheckSizeAttributes();
 
@@ -191,7 +191,7 @@ const CheckCards = () => {
     }
 };
 
-const ResizeHeader = () => {
+function ResizeHeader (){
     let width = windowSize();
         
     if (width <= 815) {
@@ -250,11 +250,9 @@ const ResizeHeader = () => {
 };
 
 
-function Init (){
+export function Init (){
    CheckSizeAttributes();
    ArrowSliderStyle();
    CheckCards();
    ResizeHeader();
 }
-
-module.exports = {Init, CheckSizeAttributes, CheckSizeAttributes2};

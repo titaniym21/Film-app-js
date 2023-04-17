@@ -12,8 +12,7 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
     "stop": "killall electron",
-    "testing": "jest",
-    "build": "webpack"
+    "testing": "jest"
   },
   "keywords": [],
   "author": "Oleksandr <lanko.oleksandr@gmail.com>",
@@ -27,25 +26,12 @@
     "@electron-forge/maker-rpm": "^6.0.5",
     "@electron-forge/maker-squirrel": "^6.0.5",
     "@electron-forge/maker-zip": "^6.0.5",
-    "babel-loader": "^9.1.2",
-    "css-loader": "^6.7.3",
     "electron": "^23.2.0",
     "electronmon": "^2.0.2",
-    "html-webpack-plugin": "^5.5.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "jsdoc": "^4.0.2",
     "style-loader": "^3.3.2",
-    "typescript": "^5.0.4",
-    "webpack": "^5.79.0",
-    "webpack-cli": "^5.0.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/titaniym21/Film-app-js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/titaniym21/Film-app-js/issues"
-  },
-  "homepage": "https://github.com/titaniym21/Film-app-js#readme"
+    "typescript": "^5.0.4"
+  }
 }

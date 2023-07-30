@@ -51,6 +51,7 @@ section {
 .hidden {
   display: none;
   opacity: 0;
+  cursor:default;
 }
 .logo img {
   margin-left: 10px;
@@ -129,6 +130,7 @@ input[type="email"],
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  cursor: default;
 }
 
 input[type="checkbox"] {
@@ -183,7 +185,6 @@ a {
 #startBtn {
   animation: zoom 0.4s linear;
   position: relative;
-  top: -345%;
 }
 @keyframes zoom {
   0% {

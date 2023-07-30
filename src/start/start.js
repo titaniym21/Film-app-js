@@ -32,7 +32,7 @@ loginForm.addEventListener("submit", function (event) {
   showModal();
 });
 
-body.addEventListener("click", function (event) {
+containerInput.addEventListener("click", function (event) {
   if (event.target === modalMain) {
     hideModal();
   }
